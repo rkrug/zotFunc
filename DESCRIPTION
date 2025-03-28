@@ -1,11 +1,11 @@
 Package: zotFunc
-Title: What the Package Does (One Line, Title Case)
+Title: Zotero Integration Functions
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+    person("Rainer ", "Krug", , "Rainer@Krugs.de", role = c("aut", "cre", "maintainer"))
+Description: This package provides functions working with Zenodo. THis includes functions to work with the API, 
+  and data returned from the API (planned) well as functions working with local Zenodo (planned)
+License: CC-BY-4.0
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
