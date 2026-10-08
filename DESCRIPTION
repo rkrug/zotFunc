@@ -3,11 +3,23 @@ Title: Zotero Integration Functions
 Version: 0.0.0.9000
 Authors@R: 
     person("Rainer ", "Krug", , "Rainer@Krugs.de", role = c("aut", "cre", "maintainer"))
-Description: This package provides functions working with Zenodo. THis includes functions to work with the API, 
-  and data returned from the API (planned) well as functions working with local Zenodo (planned)
-License: CC-BY-4.0
+Description: Download complete Zotero group libraries via the Zotero Web API v3
+    in any of Zotero's export formats, and keep the local copies up to date by
+    re-downloading only groups that changed on the server.
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2
-URL: https://github.com/rkrug/zotFunc
+URL: https://github.com/rkrug/zotFunc, https://rkrug.github.io/zotFunc/
 BugReports: https://github.com/rkrug/zotFunc/issues
+Config/roxygen2/version: 8.0.0
+Imports: httr2
+Suggests:
+    jsonlite,
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0),
+    vcr (>= 2.0.0),
+    withr
+Config/testthat/edition: 3
+Depends: R (>= 4.1.0)
+VignetteBuilder: knitr

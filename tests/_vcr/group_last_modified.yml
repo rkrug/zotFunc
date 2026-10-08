@@ -1,0 +1,138 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://api.zotero.org/groups/4937409/items?format=json&limit=1&sort=dateModified&direction=desc
+  response:
+    status: 200
+    headers:
+      date: Thu, 08 Oct 2026 14:28:00 GMT
+      content-type: application/json
+      content-length: '1951'
+      server: Apache
+      zotero-api-version: '3'
+      zotero-schema-version: '42'
+      total-results: '374'
+      link: <https://api.zotero.org/groups/4937409/items?limit=1&start=1>; rel="next",
+        <https://api.zotero.org/groups/4937409/items?limit=1&start=373>; rel="last",
+        <https://www.zotero.org/groups/4937409/items>; rel="alternate"
+      last-modified-version: '2053'
+      strict-transport-security: max-age=31536000; includeSubDomains; preload
+      vary: Accept-Encoding
+      content-encoding: gzip
+    body:
+      string: |-
+        [
+            {
+                "key": "UQE2HG8F",
+                "version": 2053,
+                "library": {
+                    "type": "group",
+                    "id": 4937409,
+                    "name": "Nature Futures Framework",
+                    "links": {
+                        "alternate": {
+                            "href": "https://www.zotero.org/groups/nature_futures_framework",
+                            "type": "text/html"
+                        }
+                    }
+                },
+                "links": {
+                    "self": {
+                        "href": "https://api.zotero.org/groups/4937409/items/UQE2HG8F",
+                        "type": "application/json"
+                    },
+                    "alternate": {
+                        "href": "https://www.zotero.org/groups/nature_futures_framework/items/UQE2HG8F",
+                        "type": "text/html"
+                    }
+                },
+                "meta": {
+                    "createdByUser": {
+                        "id": 11036046,
+                        "username": "TSU_scenarios_models",
+                        "name": "",
+                        "links": {
+                            "alternate": {
+                                "href": "https://www.zotero.org/tsu_scenarios_models",
+                                "type": "text/html"
+                            }
+                        }
+                    },
+                    "creatorSummary": "Oostvogels et al.",
+                    "parsedDate": "2024",
+                    "numChildren": 0
+                },
+                "data": {
+                    "key": "UQE2HG8F",
+                    "version": 2053,
+                    "itemType": "journalArticle",
+                    "title": "What about the negatives? An integrated framework for revealing diverse values of nature and its conservation",
+                    "creators": [
+                        {
+                            "creatorType": "author",
+                            "firstName": "V. J.",
+                            "lastName": "Oostvogels"
+                        },
+                        {
+                            "creatorType": "author",
+                            "firstName": "B.",
+                            "lastName": "Dumont"
+                        },
+                        {
+                            "creatorType": "author",
+                            "firstName": "H. J.",
+                            "lastName": "Nijland"
+                        },
+                        {
+                            "creatorType": "author",
+                            "firstName": "I. J. M.",
+                            "lastName": "De Boer"
+                        },
+                        {
+                            "creatorType": "author",
+                            "firstName": "R.",
+                            "lastName": "Ripoll<U+2010>Bosch"
+                        }
+                    ],
+                    "abstractNote": "Abstract\n            \n              \n                \n                  Taking into account the perspectives of local stakeholders is essential for just and effective biodiversity conservation. Plural valuation, making visible the diverse values people hold in relation to nature, has emerged as a key approach towards better inclusion of stakeholders' perspectives.\n                \n                \n                  So far, plural valuation has mainly focused on positive values, leaving equally important negative values underexposed. To address this, a concrete proposal has been presented to also consider <U+2018>disvalues<U+2019>. However, accessible frameworks to help practitioners apply this concept are arguably still lacking.\n                \n                \n                  To address this gap, we here propose the <U+2018>Integrated Nature Futures Framework<U+2019> (I<U+2010>NFF), where <U+2018>integrated<U+2019> indicates joint consideration of positive and negative values. The I<U+2010>NFF draws on the popular Nature Futures Framework (NFF) to develop disvalue thinking in a more accessible form.\n                \n                \n                  The I<U+2010>NFF considers three perspectives (<U+2018>nature<U+2019>, <U+2018>society<U+2019> and <U+2018>culture<U+2019>), based on which something can be placed on a spectrum from positive (<U+2018>for nature<U+2019>, <U+2018>for society<U+2019> and <U+2018>as culture<U+2019>) to negative (<U+2018>against nature<U+2019>, <U+2018>against society<U+2019> and <U+2018>in conflict with culture<U+2019>), and can be represented as two mirrored triangles.\n                \n                \n                  Using empirical data, we illustrate various purposes for which the I<U+2010>NFF can be used: to inventory nature<U+2010>related topics <U+2018>at play<U+2019> in a given context, to depict how people frame their overall relationship with nature or to depict how people frame specific issues. This demonstrates how the I<U+2010>NFF helps reveal value pluralism and trade<U+2010>offs, capture the reciprocity of human<U+2013>nature relationships and identify where perspectives differ and share common ground.\n                \n                \n                  We close by discussing how the I<U+2010>NFF can enhance the inclusion of stakeholder voices in biodiversity conservation, which is indispensable for a more nature<U+2010> and people<U+2010>positive future.\n                \n              \n            \n            \n              Read the free\n              Plain Language Summary\n              for this article on the Journal blog.\n            \n          , \n            \n              Read the free\n              Plain Language Summary\n              for this article on the Journal blog.",
+                    "publicationTitle": "People and Nature",
+                    "publisher": "",
+                    "place": "",
+                    "date": "12/2024",
+                    "volume": "6",
+                    "issue": "6",
+                    "section": "",
+                    "partNumber": "",
+                    "partTitle": "",
+                    "pages": "2633-2646",
+                    "series": "",
+                    "seriesTitle": "",
+                    "seriesText": "",
+                    "journalAbbreviation": "People and Nature",
+                    "DOI": "10.1002/pan3.10750",
+                    "citationKey": "",
+                    "url": "https://besjournals.onlinelibrary.wiley.com/doi/10.1002/pan3.10750",
+                    "accessDate": "2026-09-30T04:03:28Z",
+                    "PMID": "",
+                    "PMCID": "",
+                    "ISSN": "2575-8314, 2575-8314",
+                    "archive": "",
+                    "archiveLocation": "",
+                    "shortTitle": "What about the negatives?",
+                    "language": "en",
+                    "libraryCatalog": "DOI.org (Crossref)",
+                    "callNumber": "",
+                    "rights": "",
+                    "extra": "",
+                    "tags": [],
+                    "collections": [
+                        "5AC45ECP"
+                    ],
+                    "relations": {},
+                    "dateAdded": "2026-09-30T07:14:51Z",
+                    "dateModified": "2026-09-30T07:14:51Z"
+                }
+            }
+        ]
+  recorded_at: 2026-10-08 14:28:00
+recorded_with: VCR-vcr/2.1.0

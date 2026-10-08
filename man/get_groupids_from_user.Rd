@@ -16,29 +16,24 @@ get_groupids_from_user(
 If zotero_user_id is specified, not needed. Default: "ipbes".}
 
 \item{zotero_user_id}{Zotero user id to download the groups from. Default: obtained
-through the function [\link{id_from_name}]{@link id_from_name}.
-NB: In programatically usage, the id f=should be specified sxplicitely. Please see the
-documentation for \link{id_from_name} for details.}
+through \code{\link[=id_from_name]{id_from_name()}}. In scripts, give the id explicitly: \code{\link[=id_from_name]{id_from_name()}} parses the
+profile page, which may change.}
 
-\item{api_key}{Zotero API key - only needed for private groups. Only read access needed.}
+\item{api_key}{Zotero API key, only needed for private groups.}
+
+\item{verbose}{logical. If TRUE, output is verbose}
 }
 \value{
-Named vector with the group ids, and the names of the groups.
+Character vector of group ids, named with the group names.
 }
 \description{
-#' Get the group ids of the Groups of the user with the zotero_user_name
-This function requires a Zotero API key.
-After logging into Zotero, go to the following page:
+Lists the groups of a Zotero user.
 }
 \details{
-\href{https://www.zotero.org/settings/security#applications}{Home > Settings > Secutrity}
+\strong{NB: Only the first 25 groups are returned (the Zotero default page size).}
 
-and \strong{Create New Private Key} with the following permissions:
-
-Personal Library
-- Allow library access
-- Allow group access
-
-Default Group Permissions
-- Read Only
+Public groups work without an API key. For private groups, create a key with read access at
+\href{https://www.zotero.org/settings/security#applications}{Settings > Security}
+(\strong{Create New Private Key}, with \emph{Allow library access}, \emph{Allow group access} and
+\emph{Default Group Permissions: Read Only}).
 }

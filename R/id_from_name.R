@@ -3,7 +3,7 @@
 #' This function retrieves a Zotero user ID from a given username.
 #' 
 #' **NB:The function relies on analysing the profile page. As this page might change, 
-#' it is not recommended to use this function programatically, but rather to retrieve 
+#' it is not recommended to use this function programmatically, but rather to retrieve 
 #' the id and to use it hardcoded.**
 #' @md
 #'

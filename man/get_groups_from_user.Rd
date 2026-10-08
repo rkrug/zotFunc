@@ -8,36 +8,49 @@ get_groups_from_user(
   zotero_user_name = "ipbes",
   zotero_user_id = NULL,
   path = tempfile(),
-  output_format = "zotero_rdf",
-  api_key = Sys.getenv("ZOTERO_API_IPBES")
+  output_format = "rdf_zotero",
+  api_key = Sys.getenv("ZOTERO_API_IPBES"),
+  update = TRUE,
+  force = FALSE,
+  overwrite = FALSE
 )
 }
 \arguments{
-\item{zotero_user_name}{Name of the user to download the groups from. Default: "ipbes".}
+\item{zotero_user_name}{Name of the user to download the groups from. Default: "ipbes".
+If not given and \code{path} contains a \code{.user_id} file (written by a previous run), the user id is read from there,
+so an existing download can be updated by giving only \code{path}.}
 
-\item{zotero_user_id}{Zotero user id to download the groups from. Default: obtained
-through the function [\link{id_from_name}]{@link id_from_name}.
-NB: In programatically usage, the id f=should be specified sxplicitely. Please see the
-documentation for \link{id_from_name} for details.}
+\item{zotero_user_id}{Zotero user id to download the groups from. Default: read from \code{path/.user_id}
+if present, otherwise obtained through the function \code{id_from_name}. Must match \code{path/.user_id} if both exist.
+In scripts, give the id explicitly: \code{\link[=id_from_name]{id_from_name()}} parses the profile page, which may change.}
 
-\item{output_format}{The output_format of the files. See \code{\link{zotero_get_group}}}
+\item{path}{Folder to save the groups in.}
 
-\item{api_key}{Zotero API key - only needed for private groups. Only read access needed.}
+\item{output_format}{The output_format of the files. See \code{get_group}. If not given, existing group
+downloads keep the format stored in their \code{.format} file; new groups use the default \code{"rdf_zotero"}.}
+
+\item{api_key}{Zotero API key, only needed for private groups. Default: the environment variable \code{ZOTERO_API_IPBES}.}
+
+\item{update}{If \code{FALSE}, an existing \code{path} is an error. Otherwise passed to \code{get_group}: existing group downloads
+are updated. Default: \code{TRUE}.}
+
+\item{force}{Passed to \code{get_group}: download even if the group is not outdated. Default: \code{FALSE}.}
+
+\item{overwrite}{Passed to \code{get_group}: replace existing group folders that are not previous downloads. Default: \code{FALSE}.}
+}
+\value{
+\code{NULL}, invisibly. Called for the downloads.
 }
 \description{
-Download of the Groups of the user with the zotero_user_id.
-This function requires a Zotero API key.
-After logging into Zotero, go to the following page:
+Downloads every group of a Zotero user with \code{\link[=get_group]{get_group()}}, each into the sub-folder
+\verb{<group name>_<group id>} of \code{path}. The update rules of \code{\link[=get_group]{get_group()}} apply to each group.
+A group that fails prints its error and the next group continues.
 }
 \details{
-\href{https://www.zotero.org/settings/security#applications}{Home > Settings > Secutrity}
+The user id and name are stored in \code{.user_id} and \code{.user_name} in \code{path}, so later updates only need \code{path}.
 
-and \strong{Create New Private Key} with the following permissions:
-
-Personal Library
-- Allow library access
-- Allow group access
-
-Default Group Permissions
-- Read Only
+Public groups work without an API key. For private groups, create a key with read access at
+\href{https://www.zotero.org/settings/security#applications}{Settings > Security}
+(\strong{Create New Private Key}, with \emph{Allow library access}, \emph{Allow group access} and
+\emph{Default Group Permissions: Read Only}).
 }

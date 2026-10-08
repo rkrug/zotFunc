@@ -5,14 +5,18 @@
 \title{Get Zotero Group Data}
 \usage{
 get_group(
-  group_id = 2352922,
+  group_id = NULL,
   path = tempfile(),
   output_format = NULL,
-  api_key = NULL
+  api_key = NULL,
+  update = TRUE,
+  force = FALSE,
+  overwrite = FALSE
 )
 }
 \arguments{
-\item{group_id}{The ID of the Zotero group.}
+\item{group_id}{The ID of the Zotero group. If \code{NULL}, it is read from the file \code{.id} in \code{path}
+(written by a previous download), so an existing download can be updated by giving only \code{path}.}
 
 \item{path}{The path to save the retrieved data.}
 
@@ -32,17 +36,25 @@ get_group(
 \item ris: RIS format
 \item tei: TEI format
 \item wikipedia: Wikipedia citation templates format
-\item \code{NULL}: A default format (json?)
+\item \code{NULL}: Zotero's own JSON (most complete, but slowest)
 }
 
-for a list of supported formats see
-(see \@link[https://www.zotero.org/support/dev/web_api/v3/basics#item_export_formats]{here} or
-\code{NULL} in which case the default format (json) is used.`}
+See the \href{https://www.zotero.org/support/dev/web_api/v3/basics#item_export_formats}{Zotero documentation}
+for details of the formats.
+If not given, it is read from \code{.format} in \code{path} (written by a previous download), otherwise \code{NULL}.}
 
 \item{api_key}{API key for Zotero. Only needed for private groups.}
+
+\item{update}{If \code{TRUE}, an existing previous download in \code{path} is updated (see Details). If \code{FALSE}, an existing
+download is an error. Default: \code{TRUE}.}
+
+\item{force}{If \code{TRUE}, download even if the downloaded version equals the server version. If \code{FALSE}, only download if the server version is larger. Default: \code{FALSE}.}
+
+\item{overwrite}{If \code{TRUE}, an existing non-empty \code{path} that is not a previous download is deleted and replaced.
+If \code{FALSE}, this is an error. Default: \code{FALSE}.}
 }
 \value{
-The \code{path} where the data is saved.
+The \code{path} where the data is saved (also when nothing was downloaded).
 }
 \description{
 This function retrieves data from a Zotero group using the Zotero API.
@@ -52,15 +64,30 @@ This function uses the Zotero API to retrieve data from a Zotero group. It downl
 the data in the format specified in \code{output_format}
 and saves it in batches of 100 records to the folder specified by the \code{path} parameter.
 
-\strong{NB: The folder specified will always be deleted before processing.}
+\strong{NB: An existing \code{path} that is not a previous download (no \code{.version}) is only deleted and replaced
+if \code{overwrite = TRUE}; otherwise an error is raised. An empty folder is used as is.}
+
+After the download, the group id and the library version at the start of the download are written to
+the files \code{.id} and \code{.version} (and the group name in \code{.name}) in \code{path}. If \code{path} already contains such a download, \code{\link[=group_outdated]{group_outdated()}}
+is used to check it: if the group differs from \code{group_id}, or the server version is older than the downloaded one,
+an error is raised; if the versions are identical nothing is downloaded unless \code{force = TRUE}.
+
+The output format is stored in \code{.format} (\code{json} for \code{output_format = NULL}). If \code{output_format} is not
+given, it is read from there. If it is given and differs from \code{.format}, the group is downloaded again
+in the new format, even if it is up to date.
 
 For further information about the allowed formats and other details on the API see
 \url{https://www.zotero.org/support/dev/web_api/v3/start}.
 }
 \examples{
-# Retrieve data from Zotero group with ID 2352922 (IPBES IAS Assessment Bibliograhy) and save it
-# in the file named "zotero_data.csv"
+# Download the Zotero group with ID 2352922 (IPBES IAS Assessment Bibliography) as JSON
+# into the folder "zotero_data"
 
+\dontrun{
 get_group(2352922, "zotero_data")
+
+# later: update it using only the folder
+get_group(path = "zotero_data")
+}
 
 }
