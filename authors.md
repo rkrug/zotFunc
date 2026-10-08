@@ -7,7 +7,7 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/rkrug/zotFunc/blob/master/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/rkrug/zotFunc/blob/main/DESCRIPTION)
 
 Krug R (2026). *zotFunc: Zotero Integration Functions*. R package
 version 0.0.0.9000, <https://github.com/rkrug/zotFunc>.
