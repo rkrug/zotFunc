@@ -1,0 +1,64 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://api.zotero.org/groups/4937409
+  response:
+    status: 200
+    headers:
+      date: Thu, 08 Oct 2026 14:28:00 GMT
+      content-type: application/json
+      content-length: '429'
+      server: Apache
+      zotero-api-version: '3'
+      zotero-schema-version: '42'
+      last-modified-version: '16'
+      strict-transport-security: max-age=31536000; includeSubDomains; preload
+      vary: Accept-Encoding
+      content-encoding: gzip
+    body:
+      string: |-
+        {
+            "id": 4937409,
+            "version": 16,
+            "links": {
+                "self": {
+                    "href": "https://api.zotero.org/groups/4937409",
+                    "type": "application/json"
+                },
+                "alternate": {
+                    "href": "https://www.zotero.org/groups/nature_futures_framework",
+                    "type": "text/html"
+                }
+            },
+            "meta": {
+                "created": "2023-02-03T10:14:33Z",
+                "lastModified": "2024-03-20T12:21:40Z",
+                "numItems": 444
+            },
+            "data": {
+                "id": 4937409,
+                "version": 16,
+                "name": "Nature Futures Framework",
+                "owner": 5760254,
+                "type": "PublicClosed",
+                "description": "",
+                "url": "",
+                "libraryEditing": "admins",
+                "libraryReading": "all",
+                "fileEditing": "admins",
+                "admins": [
+                    8831883,
+                    10318906,
+                    11036046,
+                    11069520
+                ],
+                "members": [
+                    9255571,
+                    10737318,
+                    11033362,
+                    12022430
+                ]
+            }
+        }
+  recorded_at: 2026-10-08 14:28:00
+recorded_with: VCR-vcr/2.1.0

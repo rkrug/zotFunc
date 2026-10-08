@@ -1,0 +1,111 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://www.zotero.org/this-user-does-not-exist-zotfunc
+  response:
+    status: 404
+    headers:
+      content-type: text/html; charset=UTF-8
+      content-length: '3172'
+      date: Thu, 08 Oct 2026 14:28:02 GMT
+      content-encoding: gzip
+      server: Apache
+      x-frame-options: SAMEORIGIN, SAMEORIGIN
+      content-security-policy: default-src 'self' https://api.zotero.org; script-src
+        'self' https://api.zotero.org 'nonce-8ut9afaots'; style-src 'self' 'nonce-pcjfaysaau';
+        img-src 'self' https://s3.amazonaws.com/; frame-src 'self'; connect-src 'self'
+        https://api.zotero.org https://api.zotero.org https://www.zotero.org https://zoterofilestorage.s3.amazonaws.com
+        https://zoterofilestorage.s3.us-east-1.amazonaws.com/ https://t0guvf0w17.execute-api.us-east-1.amazonaws.com
+        https://services.zotero.org wss://stream.zotero.org https://files.zotero.net;
+        child-src 'self'; worker-src 'self'
+      strict-transport-security: max-age=31536000; includeSubDomains; preload
+      vary: Accept-Encoding
+      x-cache: Error from cloudfront
+      via: 1.1 46b024d4c93b0e8b446bcf305ad21868.cloudfront.net (CloudFront)
+      x-amz-cf-pop: ZRH52-P1
+      alt-svc: h3=":443"; ma=86400
+      x-amz-cf-id: 2_jp3EYd96z0FrxH5H7fV2IpzCjljSPKC_WAUqkC3y9aHeJnmMbiyA==
+    body:
+      string: "<!DOCTYPE html>\n<html lang=\"en\">\n\t<head>\n\t\t<!-- Required meta
+        tags -->\n\t\t<meta charset=\"utf-8\">\n\t\t<meta name=\"viewport\" content=\"width=device-width,
+        initial-scale=1, shrink-to-fit=no\">\n\t\t<title>Zotero | Your personal research
+        assistant</title>\n\t\t<meta name=\"description\" content=\"Zotero is a free,
+        easy-to-use tool to help you collect, organize, cite, and share research.\"/>\n\n\t\t\n\t\t<link
+        rel=\"preload\" href=\"/static/fonts/36AC02_4_0.woff2\" as=\"font\" type=\"font/woff2\"
+        crossorigin>\n\t\t<link rel=\"preload\" href=\"/static/fonts/36AC02_5_0.woff2\"
+        as=\"font\" type=\"font/woff2\" crossorigin>\n\n\t\t<link rel=\"stylesheet\"
+        href=\"/static/css/bs4/web-components.min.1782766476.css\" type=\"text/css\"/>\n\t\t<style
+        nonce=\"pcjfaysaau\">\n\t\t</style>\n\t\t\n\t\t<!-- set jsConfig on window.zoteroConfig
+        -->\n\t\t\t\t<script type=\"text/javascript\" charset=\"utf-8\" nonce=\"8ut9afaots\">\n\t\t\twindow.zoteroConfig
+        = {\"librarySettings\":{\"allowEdit\":1,\"allowUpload\":1},\"baseApiUrl\":\"https:\\/\\/api.zotero.org\",\"baseWebsiteUrl\":\"https:\\/\\/www.zotero.org\",\"baseFeedUrl\":\"https:\\/\\/api.zotero.org\",\"baseZoteroWebsiteUrl\":\"https:\\/\\/www.zotero.org\",\"baseDownloadUrl\":\"\",\"debugLogEndpoint\":\"https:\\/\\/www.zotero.org\\/user\\/submitdebug\",\"directDownloads\":false,\"proxyDownloads\":false,\"staticPath\":\"\\/static\",\"proxyPath\":\"\",\"ignoreLoggedInStatus\":true,\"storePrefsRemote\":false,\"proxy\":false,\"sessionAuth\":true,\"sessionCookieName\":\"zotero_www_session_v2\",\"breadcrumbsBase\":[{\"label\":\"username\",\"path\":\"\\/\"}],\"apiKey\":\"\",\"ajax\":1,\"apiVersion\":3,\"eventful\":true,\"useIndexedDB\":true,\"preferUrlItem\":false,\"CORSallowed\":true,\"locale\":\"en-US\",\"cacheStoreType\":\"localStorage\",\"preloadCachedLibrary\":true,\"rte\":\"ckeditor\",\"sortOrdering\":{\"dateAdded\":\"desc\",\"dateModified\":\"desc\",\"date\":\"desc\",\"year\":\"desc\",\"accessDate\":\"desc\",\"title\":\"asc\",\"creator\":\"asc\"},\"defaultSortColumn\":\"title\",\"defaultSortOrder\":\"asc\",\"largeFields\":{\"title\":1,\"abstractNote\":1,\"extra\":1},\"richTextFields\":{\"note\":1},\"maxFieldSummaryLength\":{\"title\":60},\"exportFormats\":[\"bibtex\",\"bookmarks\",\"mods\",\"refer\",\"rdf_bibliontology\",\"rdf_dc\",\"rdf_zotero\",\"ris\",\"wikipedia\"],\"exportFormatsMap\":{\"bibtex\":\"BibTeX\",\"bookmarks\":\"Bookmarks\",\"mods\":\"MODS\",\"refer\":\"Refer\\/BibIX\",\"rdf_bibliontology\":\"Bibliontology
+        RDF\",\"rdf_dc\":\"Unqualified Dublin Core RDF\",\"rdf_zotero\":\"Zotero RDF\",\"ris\":\"RIS\",\"wikipedia\":\"Wikipedia
+        Citation Templates\"},\"defaultApiArgs\":{\"order\":\"title\",\"sort\":\"asc\",\"limit\":50,\"start\":0,\"content\":\"json\",\"format\":\"atom\"},\"defaultPrefs\":{\"server_javascript_enabled\":true,\"debug_level\":3},\"recaptchaSitekey\":\"6LdDriYUAAAAAKxat_UYZ22IxvcUcLLBVAQTNGJe\",\"hcaptchaSitekey\":\"52483d36-da88-4f82-b4b6-4fec4c66c6ac\",\"turnstileSitekey\":\"0x4AAAAAABhv1awqMahwU2Kn\",\"captcha\":\"turnstile\",\"useS3\":\"1\",\"s3bucketName\":\"zotero.org\",\"imagePath\":\"\\/static\\/images\",\"profileImagePath\":\"images\\/settings\\/profile\",\"groupImagePath\":\"images\\/settings\\/group\",\"installData\":[]};\n\n\t\t\tif(!window.Zotero){\n\t\t\t\twindow.Zotero
+        = {};\n\t\t\t}\n\t\t\tif(typeof window.zoteroData == 'undefined'){\n\t\t\t\twindow.zoteroData
+        = {};\n\t\t\t}\n\t\t\t\t\t\t\t\t</script>\n\t\t<script src=\"/static/js/bs4/web-components.min.1782766472.js\"></script>\n\t\t<script
+        type=\"text/javascript\" charset=\"utf-8\" nonce=\"8ut9afaots\">\n\t\t\t//
+        Disable submit buttons on form submit to prevent double-submission.\n\t\t\t//
+        Re-enable after timeout in case of error so the user can retry.\n\t\t\t//
+        Applies to any form with class \"disable-on-submit\".\n\t\t\tdocument.addEventListener('submit',
+        function(e) {\n\t\t\t\tvar form = e.target;\n\t\t\t\tif (!form.classList.contains('disable-on-submit'))
+        return;\n\t\t\t\t// Preserve the clicked button's name/value as a hidden input\n\t\t\t\t//
+        since disabled buttons are excluded from form data\n\t\t\t\tvar submitter
+        = e.submitter;\n\t\t\t\tif (submitter && submitter.name && submitter.type
+        === 'submit') {\n\t\t\t\t\tvar hidden = document.createElement('input');\n\t\t\t\t\thidden.type
+        = 'hidden';\n\t\t\t\t\thidden.name = submitter.name;\n\t\t\t\t\thidden.value
+        = submitter.value;\n\t\t\t\t\tform.appendChild(hidden);\n\t\t\t\t}\n\t\t\t\tvar
+        btns = form.querySelectorAll('button[type=\"submit\"]');\n\t\t\t\tbtns.forEach(function(btn)
+        { btn.disabled = true; });\n\t\t\t\tsetTimeout(function() {\n\t\t\t\t\tbtns.forEach(function(btn)
+        { btn.disabled = false; });\n\t\t\t\t}, 5000);\n\t\t\t});\n\t\t</script>\n\t\t\t\t\t\t<link
+        href=\"https://fosstodon.org/@zotero\" rel=\"me\"/>\n\t</head>\n\t<body class=\"\">\n\t\t<!--
+        hidden area for possible JS messages -->\n\t\t<ul class=\"messages\"></ul>\n\t\t\t\t<header
+        class=\"mobile-header d-lg-none d-xl-none\">\n\t\t\t<nav>\n\t\t\t\t<ul class=\"mobile-nav\">\n\t\t\t\t\t<li
+        class=\"active\"><a class=\"nav-link\" href=\"/\">Zotero</a></li>\n\t\t\t\t\t\t\t\t\t\t<li><a
+        class=\"nav-link\" href=\"/groups/\">Groups</a></li>\n\t\t\t\t\t<li><a class=\"nav-link\"
+        href=\"/support/\">Documentation</a></li>\n\t\t\t\t\t<li><a class=\"nav-link\"
+        href=\"https://forums.zotero.org/discussions\">Forums</a></li>\n\t\t\t\t\t<li><a
+        class=\"nav-link\" href=\"/getinvolved\">Get Involved</a></li>\n\t\t\t\t\t\t\t\t\t\t<li><a
+        class=\"nav-link separated\" href=\"/user/login/\">Log In</a></li>\n\t\t\t\t\t<li><a
+        class=\"nav-link\" href=\"/user/register/\">Sign Up</a></li>\n\t\t\t\t\t\t\t\t\t\t<li><a
+        class=\"nav-link separated\" href=\"/storage\">Upgrade Storage</a></li>\n\t\t\t\t</ul>\n\t\t\t</nav>\n\t\t</header>\n\t\t<div
+        class=\"nav-cover\"></div>\n\t\t\t\t<div class=\"site-wrapper\">\n\t\t\t<header
+        class=\"main-header\">\n\t\t\t\t<div class=\"container\">\n\t\t\t\t\t<a href=\"/\"
+        class=\"brand\">\n\t\t\t\t\t\t<img src=\"/static/images/bs4theme/zotero-logo.1775160902.svg\"
+        width=\"108\" height=\"32\" alt=\"Zotero\">\n\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t<nav>\n\t\t\t\t\t\t<ul
+        class=\"main-nav d-none d-lg-flex\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"nav-item
+        active\"><a href=\"/groups/\" class=\"nav-link\">Groups</a></li>\n\t\t\t\t\t\t\t<li
+        class=\"nav-item\"><a href=\"/support/\" class=\"nav-link\">Documentation</a></li>\n\t\t\t\t\t\t\t<li
+        class=\"nav-item\"><a href=\"https://forums.zotero.org/discussions\" class=\"nav-link\">Forums</a></li>\n\t\t\t\t\t\t\t<li
+        class=\"nav-item\"><a href=\"/getinvolved\" class=\"nav-link\">Get Involved</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li
+        class=\"nav-item\"><a href=\"/user/login/\" class=\"nav-link log-in\">Log
+        In</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"nav-item\"><a href=\"/storage\"
+        class=\"btn btn-sm btn-secondary upgrade-storage\">Upgrade Storage</a></li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</nav>\n\t\t\t\t\t<button
+        class=\"btn btn-link nav-toggle d-lg-none\" aria-label=\"Site Menu\">\n\t\t\t\t\t\t<svg
+        xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"18\" viewBox=\"0
+        0 24 18\">\n\t\t\t\t\t\t  <path d=\"M1,1H23M1,9H23M1,17H23\" stroke=\"currentColor\"
+        stroke-linecap=\"round\" stroke-miterlimit=\"10\" stroke-width=\"2\"/>\n\t\t\t\t\t\t</svg>\n\t\t\t\t\t</button>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t</header>\n\t\t\t\n\t\t\t<!--
+        Output any stored messages -->\n\t\t\t\t\t\t\n\t\t\t<!-- Output content -->\n\t\t\t<main
+        class='error'>\n\t<section class='section section-md'>\n\t\t<div class='container'>\n\t\t\t<div
+        class='row'>\n\t\t\t\t<div class='col'>\n\t\t\t\t\t<section class='settings-section'>\n\t\t\t\t\t\t<h1>Error</h1>\n\t\t\t\t\t\t\t\t\t\t\t<h2>Page
+        Not Found</h2>\n\t\t\t\t\t\t<p>The page you were looking for could not be
+        found</p>\n\t\t\t\t\t\t\t\t\t\t</section>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</section>\n</main>\n\t\t\t\t\t\t<footer
+        class=\"main-footer\">\n\t\t\t\t<div class=\"container\">\n\t\t\t\t\t<nav>\n\t\t\t\t\t\t<ul
+        class=\"footer-nav\">\n\t\t\t\t\t\t\t<li class=\"nav-item\"><a href=\"https://www.zotero.org/support/\"
+        class=\"nav-link\">Documentation</a></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\"><a
+        href=\"https://forums.zotero.org\" class=\"nav-link\">Forums</a></li>\n\t\t\t\t\t\t\t<li
+        class=\"nav-item\"><a href=\"https://www.zotero.org/blog/\" class=\"nav-link\">Blog</a></li>\n\t\t\t\t\t\t\t<li
+        class=\"nav-item\"><a href=\"https://www.zotero.org/support/privacy\" class=\"nav-link\">Privacy</a></li>\n\t\t\t\t\t\t\t<li
+        class=\"nav-item\"><a href=\"https://www.zotero.org/support/terms/terms_of_service\"
+        class=\"nav-link\">Terms of Service</a></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\"><a
+        href=\"https://www.zotero.org/getinvolved/\" class=\"nav-link\">Get Involved</a></li>\n\t\t\t\t\t\t\t<li
+        class=\"nav-item\"><a href=\"https://www.zotero.org/support/dev/start\" class=\"nav-link\">Developers</a></li>\n\t\t\t\t\t\t\t<li
+        class=\"nav-item\"><a href=\"https://www.zotero.org/jobs\" class=\"nav-link\">Jobs</a></li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t<ul
+        class=\"social-nav\">\n\t\t\t\t\t\t\t<li class=\"nav-item follow-us\">Follow
+        us</li>\n\t\t\t\t\t\t\t<li class=\"nav-item mastodon\"><a href=\"https://fosstodon.org/@zotero/\"><img
+        alt=\"Mastodon icon\" width='24px' src=\"/static/images/icons/mastodon-logo-white.svg\"></a></li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</nav>\n\t\t\t\t\t<div
+        class=\"credits\">\n\t\t\t\t\t\t<p class=\"about\">Zotero is a project of
+        <a href=\"http://digitalscholar.org/\">Digital Scholar</a>, a nonprofit organization
+        dedicated to the development of software and services for researchers and
+        cultural heritage institutions, and is developed by a <a href=\"/support/credits_and_acknowledgments\">global
+        community</a>.</p>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</footer>\n\t\t\t\t\t</div>\n\t</body>\n</html>\n"
+  recorded_at: 2026-10-08 14:28:02
+recorded_with: VCR-vcr/2.1.0

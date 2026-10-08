@@ -1,0 +1,61 @@
+---
+title: "Quickstart"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Quickstart}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+# The code needs the Zotero API, so it is not run when the vignette is built.
+# The output shown was produced with the public group 4937409.
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>", eval = FALSE)
+```
+
+`zotFunc` downloads complete Zotero group libraries and keeps the local copies
+up to date. This page covers the two calls you need most. See
+`vignette("detailed-usage")` for everything else.
+
+```{r}
+library(zotFunc)
+```
+
+## Download a group
+
+Every Zotero group has a numeric id. It is the number in the group's URL, for
+example `https://www.zotero.org/groups/4937409/nature_futures_framework`.
+
+```{r}
+get_group(4937409, path = "nff", output_format = "bibtex")
+#> Downloading 100 records starting at record 0 from ? ...
+#> Downloading 100 records starting at record 100 from 374 ...
+#> Downloading 100 records starting at record 200 from 374 ...
+#> Downloading 100 records starting at record 300 from 374 ...
+#> [1] "nff"
+```
+
+The total (`374`) is only known after the first response, so the first line
+shows `?`.
+
+The folder now holds one file per 100 records, plus four files describing the
+download:
+
+```{r}
+list.files("nff", all.files = TRUE, no.. = TRUE)
+#> [1] ".format"        ".id"            ".name"          ".version"
+#> [5] "bibtex_0.bib"   "bibtex_100.bib" "bibtex_200.bib" "bibtex_300.bib"
+```
+
+## Update it
+
+The folder knows its group and format, so the folder is all you need. Nothing
+is downloaded unless the group changed on the server:
+
+```{r}
+get_group(path = "nff")
+#> Group 4937409 in `nff` is up to date - nothing downloaded.
+#> [1] "nff"
+```
+
+Run this as often as you like, for example in a scheduled script.

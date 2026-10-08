@@ -1,29 +1,23 @@
 #' Get all the ids from all Groups from a User
 #'
-#' #' Get the group ids of the Groups of the user with the zotero_user_name
-#' This function requires a Zotero API key.
-#' After logging into Zotero, go to the following page:
+#' Lists the groups of a Zotero user.
 #'
-#' [Home > Settings > Secutrity](https://www.zotero.org/settings/security#applications)
+#' **NB: Only the first 25 groups are returned (the Zotero default page size).**
 #'
-#'   and **Create New Private Key** with the following permissions:
-#'
-#'   Personal Library
-#'       - Allow library access
-#'       - Allow group access
-#'
-#'   Default Group Permissions
-#'       - Read Only
+#' Public groups work without an API key. For private groups, create a key with read access at
+#' [Settings > Security](https://www.zotero.org/settings/security#applications)
+#' (**Create New Private Key**, with *Allow library access*, *Allow group access* and
+#' *Default Group Permissions: Read Only*).
 #'
 #' @param zotero_user_name Name of the user to download the groups from.
 #'   If zotero_user_id is specified, not needed. Default: "ipbes".
 #' @param zotero_user_id Zotero user id to download the groups from. Default: obtained
-#'   through the function [\link{id_from_name}]{@link id_from_name}.
-#'   NB: In programatically usage, the id f=should be specified sxplicitely. Please see the
-#'   documentation for \link{id_from_name} for details.
-#' @param api_key Zotero API key - only needed for private groups. Only read access needed.
+#'   through [id_from_name()]. In scripts, give the id explicitly: [id_from_name()] parses the
+#'   profile page, which may change.
+#' @param api_key Zotero API key, only needed for private groups.
+#' @param verbose logical. If TRUE, output is verbose
 #'
-#' @return Named vector with the group ids, and the names of the groups.
+#' @return Character vector of group ids, named with the group names.
 #' @md
 #'
 #' @importFrom httr2 request req_perform resp_body_json resp_status
@@ -35,10 +29,11 @@
 #'
 
 get_groupids_from_user <- function(
-    zotero_user_name = "ipbes",
-    zotero_user_id = NULL, # "5760254",
-    api_key = NULL, # Sys.getenv("ZOTERO_API_IPBES"),
-    verbose = FALSE) {
+  zotero_user_name = "ipbes",
+  zotero_user_id = NULL, # "5760254",
+  api_key = NULL, # Sys.getenv("ZOTERO_API_IPBES"),
+  verbose = FALSE
+) {
   if (is.null(zotero_user_id)) {
     if (verbose) {
       message("Get user id from user name ...")

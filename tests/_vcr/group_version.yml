@@ -1,0 +1,26 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://api.zotero.org/groups/4937409/items?format=keys&limit=1
+  response:
+    status: 200
+    headers:
+      date: Thu, 08 Oct 2026 14:27:51 GMT
+      content-type: text/plain;charset=UTF-8
+      content-length: '29'
+      server: Apache
+      zotero-api-version: '3'
+      zotero-schema-version: '42'
+      total-results: '374'
+      link: <https://api.zotero.org/groups/4937409/items?format=keys&limit=1&start=1>;
+        rel="next", <https://api.zotero.org/groups/4937409/items?format=keys&limit=1&start=373>;
+        rel="last", <https://www.zotero.org/groups/4937409/items>; rel="alternate"
+      last-modified-version: '2053'
+      strict-transport-security: max-age=31536000; includeSubDomains; preload
+      vary: Accept-Encoding
+      content-encoding: gzip
+    body:
+      string: |
+        UQE2HG8F
+  recorded_at: 2026-10-08 14:27:51
+recorded_with: VCR-vcr/2.1.0

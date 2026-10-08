@@ -1,0 +1,1306 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://api.zotero.org/users/5760254/groups
+  response:
+    status: 200
+    headers:
+      date: Thu, 08 Oct 2026 14:28:01 GMT
+      content-type: application/json
+      content-length: '6614'
+      server: Apache
+      zotero-api-version: '3'
+      zotero-schema-version: '42'
+      total-results: '18'
+      link: <https://www.zotero.org/users/5760254/groups>; rel="alternate"
+      strict-transport-security: max-age=31536000; includeSubDomains; preload
+      vary: Accept-Encoding
+      content-encoding: gzip
+    body:
+      string: |-
+        [
+            {
+                "id": 4589462,
+                "version": 144,
+                "links": {
+                    "self": {
+                        "href": "https://api.zotero.org/groups/4589462",
+                        "type": "application/json"
+                    },
+                    "alternate": {
+                        "href": "https://www.zotero.org/groups/ipbes_tca",
+                        "type": "text/html"
+                    }
+                },
+                "meta": {
+                    "created": "2022-02-08T09:51:34Z",
+                    "lastModified": "2026-09-29T22:13:35Z",
+                    "numItems": 8380
+                },
+                "data": {
+                    "id": 4589462,
+                    "version": 144,
+                    "name": "IPBES TCA",
+                    "owner": 5760254,
+                    "type": "PublicClosed",
+                    "description": "<p>Library of the underlying references</p>\n<p><strong>Thematic assessment of the underlying causes of biodiversity loss and the determinants of transformative change and options for achieving the 2050 Vision for Biodiversity</strong></p>\n<p>This library contains the references cited in the assessment report, the summary for policymakers and the case studies.</p>\n\n<p>The tags indicate in which chapter(s) the references were cited.</p>\n\n<p>Download <a href=\"https://doi.org/10.5281/zenodo.11382215\" rel=\"nofollow\">the full assessment report</a></p>\n<p>See the <a href=\"https://www.ipbes.net/transformative-change-assessment\" rel=\"nofollow\">assessment information page on the IPBES website</a></p>\n<p>For enquiries, please contact the IPBES Data and Knowledge Unit (<a href=\"mailto:aidin.niamir@senckenberg.de\">aidin.niamir@senckenberg.de</a>)</p>",
+                    "url": "https://www.ipbes.net/transformative-change-assessment",
+                    "hasImage": 1,
+                    "libraryEditing": "admins",
+                    "libraryReading": "all",
+                    "fileEditing": "admins",
+                    "admins": [
+                        5761202,
+                        5825730,
+                        8911741,
+                        9690307,
+                        9788811,
+                        10318906,
+                        10553812
+                    ],
+                    "members": [
+                        35711,
+                        72853,
+                        369041,
+                        935763,
+                        1293242,
+                        1298880,
+                        1724299,
+                        1828253,
+                        2686960,
+                        2838572,
+                        2987500,
+                        3322638,
+                        5016718,
+                        5591252,
+                        5821515,
+                        5827941,
+                        5835820,
+                        5866412,
+                        6477281,
+                        6489566,
+                        6617299,
+                        8638638,
+                        9197145,
+                        9197236,
+                        9197695,
+                        9198791,
+                        9201395,
+                        9202836,
+                        9203314,
+                        9204279,
+                        9206413,
+                        9213668,
+                        9214723,
+                        9218472,
+                        9219833,
+                        9243263,
+                        9262999,
+                        9281428,
+                        9309393,
+                        9310574,
+                        9472545,
+                        9554696,
+                        9676260,
+                        9742003,
+                        9934758,
+                        10552771,
+                        10584594,
+                        10768119,
+                        10795389,
+                        12022430,
+                        12997833,
+                        14905456,
+                        16914462,
+                        19043332,
+                        197157,
+                        1028042,
+                        2038091,
+                        2521091,
+                        2613377,
+                        5788434,
+                        7096747,
+                        7130507,
+                        9197191,
+                        9197194,
+                        9198080,
+                        9198244,
+                        9198775,
+                        9204069,
+                        9269166,
+                        9916767,
+                        10773240,
+                        10939116,
+                        13165799,
+                        14941028
+                    ]
+                }
+            },
+            {
+                "id": 5081872,
+                "version": 96,
+                "links": {
+                    "self": {
+                        "href": "https://api.zotero.org/groups/5081872",
+                        "type": "application/json"
+                    },
+                    "alternate": {
+                        "href": "https://www.zotero.org/groups/ipbes_bba",
+                        "type": "text/html"
+                    }
+                },
+                "meta": {
+                    "created": "2023-06-02T14:28:00Z",
+                    "lastModified": "2026-08-24T06:06:44Z",
+                    "numItems": 3640
+                },
+                "data": {
+                    "id": 5081872,
+                    "version": 96,
+                    "name": "IPBES BBA",
+                    "owner": 5760254,
+                    "type": "PublicClosed",
+                    "description": "<p>Library of the underlying references</p>\n<p><strong>Methodological assessment of the impact and dependency of business on biodiversity and nature<U+2019>s contributions to people</strong></p>\n<p>This library contains the references cited in the assessment report and its glossary.</p>\n<p>The tags indicate in which chapter(s) the references were cited.</p>\n<p>Download <a href=\"https://doi.org/10.5281/zenodo.17185116\" rel=\"nofollow\">the full assessment report</a></p>\n<p>See the <a href=\"https://www.ipbes.net/business-impact\" rel=\"nofollow\">assessment information page on the IPBES website</a></p>\n<p>For enquiries, please contact the IPBES Data and Knowledge Unit (<a href=\"mailto:aidin.niamir@senckenberg.de\">aidin.niamir@senckenberg.de</a>)</p>",
+                    "url": "https://www.ipbes.net/business-impact",
+                    "hasImage": 1,
+                    "libraryEditing": "admins",
+                    "libraryReading": "all",
+                    "fileEditing": "admins",
+                    "admins": [
+                        5825730,
+                        10318906
+                    ],
+                    "members": [
+                        701458,
+                        1956495,
+                        5215570,
+                        5827917,
+                        6232921,
+                        8562318,
+                        10004010,
+                        11903075,
+                        11994954,
+                        12002590,
+                        12017191,
+                        12022430,
+                        12030048,
+                        12040970,
+                        12061476,
+                        12071264,
+                        12084484,
+                        12099644,
+                        12185725,
+                        646919,
+                        1028152,
+                        1065280,
+                        2370083,
+                        2585927,
+                        4494481,
+                        5539577,
+                        5831403,
+                        5848280,
+                        5972632,
+                        6067813,
+                        6507237,
+                        6594061,
+                        7079174,
+                        9582518,
+                        10013066,
+                        10056432,
+                        11024965,
+                        11148866,
+                        11581557,
+                        11861687,
+                        11867097,
+                        11867115,
+                        11867118,
+                        11905210,
+                        11919039,
+                        11961933,
+                        11968272,
+                        11980382,
+                        11981105,
+                        11981208,
+                        11983176,
+                        11996892,
+                        12000286,
+                        12017244,
+                        12026572,
+                        12033044,
+                        12039322,
+                        12039409,
+                        12043034,
+                        12056013,
+                        12056639,
+                        12088238,
+                        12148265,
+                        12186659,
+                        12403179,
+                        12466641,
+                        12501820,
+                        12567069,
+                        12616602,
+                        12665814,
+                        12667018,
+                        13419253,
+                        14009926,
+                        14611135,
+                        15455193
+                    ]
+                }
+            },
+            {
+                "id": 4596166,
+                "version": 212,
+                "links": {
+                    "self": {
+                        "href": "https://api.zotero.org/groups/4596166",
+                        "type": "application/json"
+                    },
+                    "alternate": {
+                        "href": "https://www.zotero.org/groups/ipbes_nxs",
+                        "type": "text/html"
+                    }
+                },
+                "meta": {
+                    "created": "2022-02-14T13:26:14Z",
+                    "lastModified": "2026-08-18T18:23:27Z",
+                    "numItems": 16587
+                },
+                "data": {
+                    "id": 4596166,
+                    "version": 212,
+                    "name": "IPBES NXS",
+                    "owner": 5760254,
+                    "type": "PublicClosed",
+                    "description": "<p>Library of the underlying references</p>\n<p><strong>Thematic Assessment Report on the Interlinkages among Biodiversity, Water, Food and Health</strong></p>\n<p>This library contains the references cited in the assessment report and its supporting documents, including data management reports and annexes.</p>\n<p>The tags indicate in which chapter(s) the references were cited.</p>\n<p>Download <a href=\"https://doi.org/10.5281/zenodo.13850054\" rel=\"nofollow\">the full assessment report</a></p>\n<p>See the <a href=\"https://www.ipbes.net/nexus-assessment\" rel=\"nofollow\">assessment information page on the IPBES website</a></p>\n<p>For enquiries, please contact the IPBES Data and Knowledge Unit (<a href=\"mailto:aidin.niamir@senckenberg.de\">aidin.niamir@senckenberg.de</a>)</p>",
+                    "url": "https://www.ipbes.net/nexus-assessment",
+                    "hasImage": 1,
+                    "libraryEditing": "admins",
+                    "libraryReading": "all",
+                    "fileEditing": "admins",
+                    "admins": [
+                        5761202,
+                        5825730,
+                        6361684,
+                        9486868,
+                        10318906
+                    ],
+                    "members": [
+                        57806,
+                        190821,
+                        275378,
+                        279475,
+                        300753,
+                        340628,
+                        491767,
+                        570707,
+                        597517,
+                        665593,
+                        690372,
+                        842986,
+                        935416,
+                        1045655,
+                        1211769,
+                        1290290,
+                        1911967,
+                        1972062,
+                        2495632,
+                        2677151,
+                        3239731,
+                        3596348,
+                        3872086,
+                        3932378,
+                        5027487,
+                        5055597,
+                        5303073,
+                        5436244,
+                        5738886,
+                        5767162,
+                        5827405,
+                        5844600,
+                        5846022,
+                        5852218,
+                        6122424,
+                        6564311,
+                        6671184,
+                        6739862,
+                        6750101,
+                        6771082,
+                        6884266,
+                        7005506,
+                        7222531,
+                        7420200,
+                        7480502,
+                        7668148,
+                        8025798,
+                        8223619,
+                        8265245,
+                        8317712,
+                        8834368,
+                        8997937,
+                        9092126,
+                        9095359,
+                        9095377,
+                        9095622,
+                        9096199,
+                        9096836,
+                        9097495,
+                        9097616,
+                        9106602,
+                        9126135,
+                        9168441,
+                        9197162,
+                        9197174,
+                        9197187,
+                        9197201,
+                        9197362,
+                        9197403,
+                        9197590,
+                        9197665,
+                        9197690,
+                        9197796,
+                        9197982,
+                        9198310,
+                        9198575,
+                        9198689,
+                        9199505,
+                        9199516,
+                        9199937,
+                        9200079,
+                        9200247,
+                        9203307,
+                        9203313,
+                        9203576,
+                        9204047,
+                        9204445,
+                        9204453,
+                        9204833,
+                        9208997,
+                        9212922,
+                        9214246,
+                        9219632,
+                        9237125,
+                        9237132,
+                        9240434,
+                        9241871,
+                        9243608,
+                        9286584,
+                        9331808,
+                        9357118,
+                        9477939,
+                        9484928,
+                        9498464,
+                        9533929,
+                        9548875,
+                        9552994,
+                        9554875,
+                        9555250,
+                        9558694,
+                        9611555,
+                        9625617,
+                        9639902,
+                        9649588,
+                        9695080,
+                        9794254,
+                        9903673,
+                        9963324,
+                        9964150,
+                        10149708,
+                        10149724,
+                        10170484,
+                        10225454,
+                        10288925,
+                        10421931,
+                        10427847,
+                        10448420,
+                        10449844,
+                        10450299,
+                        10469836,
+                        10474123,
+                        10505579,
+                        10517386,
+                        10521822,
+                        10584871,
+                        10719662,
+                        11098902,
+                        11551157,
+                        11825422,
+                        12022430,
+                        12346370,
+                        12386471,
+                        12526230,
+                        12591604,
+                        12842697,
+                        12903398,
+                        12931373,
+                        13833964,
+                        668012,
+                        7185226,
+                        9204032
+                    ]
+                }
+            },
+            {
+                "id": 2333070,
+                "version": 25,
+                "links": {
+                    "self": {
+                        "href": "https://api.zotero.org/groups/2333070",
+                        "type": "application/json"
+                    },
+                    "alternate": {
+                        "href": "https://www.zotero.org/groups/ipbes_afa",
+                        "type": "text/html"
+                    }
+                },
+                "meta": {
+                    "created": "2019-05-24T14:10:19Z",
+                    "lastModified": "2026-05-19T09:40:31Z",
+                    "numItems": 2934
+                },
+                "data": {
+                    "id": 2333070,
+                    "version": 25,
+                    "name": "IPBES AFA",
+                    "owner": 5760254,
+                    "type": "PublicClosed",
+                    "description": "<p>Library of the underlying references</p>\n<p><strong>Regional Assessment Report on Biodiversity and Ecosystem Services for Africa</strong></p>\n<p>This library contains the references cited in the assessment report and its glossary.</p>\n<p>The tags indicate in which chapter(s) the references were cited.</p>\n<p>Download <a href=\"https://doi.org/10.5281/zenodo.3236177\" rel=\"nofollow\">the full assessment report</a></p>\n<p>See the <a href=\"https://www.ipbes.net/assessment-reports/africa\" rel=\"nofollow\">assessment information page on the IPBES website</a></p>\n<p>For enquiries, please contact the IPBES Data and Knowledge Unit (<a href=\"mailto:aidin.niamir@senckenberg.de\">aidin.niamir@senckenberg.de</a>)</p>",
+                    "url": "https://www.ipbes.net/assessment-reports/africa",
+                    "hasImage": 1,
+                    "libraryEditing": "admins",
+                    "libraryReading": "all",
+                    "fileEditing": "admins",
+                    "admins": [
+                        5820275,
+                        5825730,
+                        10318906
+                    ]
+                }
+            },
+            {
+                "id": 2344322,
+                "version": 170,
+                "links": {
+                    "self": {
+                        "href": "https://api.zotero.org/groups/2344322",
+                        "type": "application/json"
+                    },
+                    "alternate": {
+                        "href": "https://www.zotero.org/groups/ipbes_ilk",
+                        "type": "text/html"
+                    }
+                },
+                "meta": {
+                    "created": "2019-06-26T07:49:58Z",
+                    "lastModified": "2026-04-20T08:41:13Z",
+                    "numItems": 14774
+                },
+                "data": {
+                    "id": 2344322,
+                    "version": 170,
+                    "name": "IPBES ILK",
+                    "owner": 5760254,
+                    "type": "PublicClosed",
+                    "description": "<p><strong>Library of the references identified as resources for the past and ongoing IPBES assessments.</strong></p>\n<p>This library contains the references and resources contributed during calls for contributions for Indigenous and local knowledge (ILK), references cited in previous approved IPBES reports as well as references identified as resources by the task force and technical support unit on ILK.</p>\n<p>Tags are being used to indicate how a reference has been collected and/or used: C refers to calls for contribution (the year and assessment abbreviation indicate when the call for contributions was held, and for which assessment references were requested specifically); A refers to a citation in an assessment. </p>\n<p>For enquiries and/or suggestions, please contact the IPBES technical support unit on ILK (<a href=\"mailto:p.bates@unesco.org\"> p.bates@unesco.org).</a></p>",
+                    "url": "https://www.ipbes.net/indigenous-local-knowledge",
+                    "hasImage": 1,
+                    "libraryEditing": "admins",
+                    "libraryReading": "all",
+                    "fileEditing": "admins",
+                    "admins": [
+                        5761202,
+                        5821515,
+                        5825730,
+                        10318335,
+                        10318906
+                    ],
+                    "members": [
+                        35711,
+                        300753,
+                        340628,
+                        491767,
+                        701458,
+                        845998,
+                        855950,
+                        903197,
+                        1293242,
+                        1298880,
+                        1391913,
+                        1780223,
+                        1900676,
+                        1917427,
+                        2005349,
+                        2010614,
+                        2163018,
+                        2588616,
+                        2686960,
+                        2706408,
+                        2911437,
+                        2970155,
+                        2973437,
+                        2987500,
+                        3156478,
+                        3322638,
+                        3348587,
+                        3517506,
+                        3736296,
+                        4038961,
+                        4749726,
+                        4765865,
+                        4867665,
+                        5016718,
+                        5055563,
+                        5591252,
+                        5635321,
+                        5825260,
+                        5825866,
+                        5826130,
+                        5826409,
+                        5827106,
+                        5827128,
+                        5827149,
+                        5827183,
+                        5827405,
+                        5827636,
+                        5827794,
+                        5827917,
+                        5827941,
+                        5832426,
+                        5835429,
+                        5835437,
+                        5835579,
+                        5835820,
+                        5835996,
+                        5836119,
+                        5837537,
+                        5839009,
+                        5843765,
+                        5844600,
+                        5846018,
+                        5846021,
+                        5846022,
+                        5850895,
+                        5851114,
+                        5851148,
+                        5852218,
+                        5857058,
+                        5862169,
+                        5866412,
+                        5866463,
+                        5866637,
+                        5868702,
+                        5879117,
+                        5882249,
+                        5894263,
+                        5940679,
+                        6082951,
+                        6171860,
+                        6362122,
+                        6419107,
+                        6516982,
+                        6605267,
+                        6619833,
+                        6673487,
+                        6924342,
+                        7551458,
+                        8025798,
+                        8436152,
+                        9085343,
+                        9197236,
+                        9197403,
+                        9198791,
+                        9214723,
+                        9237132,
+                        9309393,
+                        9310574,
+                        9486868,
+                        9508857,
+                        9554696,
+                        9625617,
+                        9690307,
+                        10004010,
+                        11550582,
+                        11670342,
+                        11878939,
+                        11903075,
+                        11994954,
+                        12002590,
+                        12022430,
+                        12030048,
+                        12061476,
+                        12071264,
+                        12084484,
+                        12099667,
+                        12185725,
+                        12386563,
+                        13128003,
+                        13411004,
+                        13450369,
+                        14947543,
+                        15081227,
+                        15370524,
+                        15509399,
+                        15584567,
+                        15997743,
+                        16116751,
+                        16314489,
+                        16914462,
+                        17247007,
+                        17535089,
+                        17538549,
+                        17844049,
+                        17849559,
+                        18404864,
+                        18618396,
+                        19043332
+                    ]
+                }
+            },
+            {
+                "id": 2333079,
+                "version": 20,
+                "links": {
+                    "self": {
+                        "href": "https://api.zotero.org/groups/2333079",
+                        "type": "application/json"
+                    },
+                    "alternate": {
+                        "href": "https://www.zotero.org/groups/ipbes_scm",
+                        "type": "text/html"
+                    }
+                },
+                "meta": {
+                    "created": "2019-05-24T14:15:26Z",
+                    "lastModified": "2026-04-10T18:01:05Z",
+                    "numItems": 1565
+                },
+                "data": {
+                    "id": 2333079,
+                    "version": 20,
+                    "name": "IPBES SCM",
+                    "owner": 5760254,
+                    "type": "PublicClosed",
+                    "description": "<p>Library of the underlying references</p>\n<h4>Methodological Assessment Report on Scenarios and Models of Biodiversity and Ecosystem Services</h4>\n<p>This library contains the references cited in the assessment report and its glossary.</p>\n<p>The tags indicate in which chapter(s) the references were cited.</p>\n<p>Download <a href=\"https://doi.org/10.5281/zenodo.3235428\" rel=\"nofollow\">the full assessment report</a></p>\n<p>See the <a href=\"https://www.ipbes.net/assessment-reports/scenarios\" rel=\"nofollow\">assessment information page on the IPBES website</a></p>\n<p><span>For enquiries, please contact the IPBES Data and Knowledge Unit (</span><a href=\"mailto:aidin.niamir@senckenberg.de\">aidin.niamir@senckenberg.de</a><span>)</span></p>",
+                    "url": "https://www.ipbes.net/assessment-reports/scenarios",
+                    "hasImage": 1,
+                    "libraryEditing": "admins",
+                    "libraryReading": "all",
+                    "fileEditing": "admins",
+                    "admins": [
+                        5825730,
+                        10318906
+                    ],
+                    "members": [
+                        12022430
+                    ]
+                }
+            },
+            {
+                "id": 2345951,
+                "version": 18,
+                "links": {
+                    "self": {
+                        "href": "https://api.zotero.org/groups/2345951",
+                        "type": "application/json"
+                    },
+                    "alternate": {
+                        "href": "https://www.zotero.org/groups/ipbes_eca",
+                        "type": "text/html"
+                    }
+                },
+                "meta": {
+                    "created": "2019-07-01T21:05:50Z",
+                    "lastModified": "2026-04-10T18:00:34Z",
+                    "numItems": 21778
+                },
+                "data": {
+                    "id": 2345951,
+                    "version": 18,
+                    "name": "IPBES ECA",
+                    "owner": 5760254,
+                    "type": "PublicClosed",
+                    "description": "<p>Library of the underlying references</p>\n<p><strong>Regional Assessment Report on Biodiversity and Ecosystem Services for Europe and Central Asia</strong></p>\n<p>This library contains the references cited in the assessment report and its glossary.</p>\n<p>The tags indicate in which chapter(s) the references were cited.</p>\n<p>Download <a href=\"https://doi.org/10.5281/zenodo.3237428\" rel=\"nofollow\">the full assessment report</a></p>\n<p>See the <a href=\"https://www.ipbes.net/assessment-reports/eca\" rel=\"nofollow\">assessment information page on the IPBES website</a></p>\n<p><span>For enquiries, please contact the IPBES Data and Knowledge Unit (</span><a href=\"mailto:aidin.niamir@senckenberg.de\">aidin.niamir@senckenberg.de</a><span>)</span></p>",
+                    "url": "https://www.ipbes.net/assessment-reports/eca",
+                    "hasImage": 1,
+                    "libraryEditing": "admins",
+                    "libraryReading": "all",
+                    "fileEditing": "admins",
+                    "admins": [
+                        5820275,
+                        5825730,
+                        10318906
+                    ],
+                    "members": [
+                        12022430
+                    ]
+                }
+            },
+            {
+                "id": 2333075,
+                "version": 23,
+                "links": {
+                    "self": {
+                        "href": "https://api.zotero.org/groups/2333075",
+                        "type": "application/json"
+                    },
+                    "alternate": {
+                        "href": "https://www.zotero.org/groups/ipbes_apa",
+                        "type": "text/html"
+                    }
+                },
+                "meta": {
+                    "created": "2019-05-24T14:13:51Z",
+                    "lastModified": "2026-04-10T18:00:23Z",
+                    "numItems": 5618
+                },
+                "data": {
+                    "id": 2333075,
+                    "version": 23,
+                    "name": "IPBES APA",
+                    "owner": 5760254,
+                    "type": "PublicClosed",
+                    "description": "<p><span>Library of the underlying references</span></p>\n<p><strong>Regional Assessment Report on Biodiversity and Ecosystem Services for Asia and the Pacific</strong></p>\n<p>This library contains the references cited in the assessment report and its glossary.</p>\n<p>The tags indicate in which chapter(s) the references were cited.</p>\n<p>Download <a href=\"https://doi.org/10.5281/zenodo.3237373\" rel=\"nofollow\">the full assessment report</a></p>\n<p>See the <a href=\"https://www.ipbes.net/assessment-reports/asia-pacific\" rel=\"nofollow\">assessment information page on the IPBES website</a></p>\n<p><span>For enquiries, please contact the IPBES Data and Knowledge Unit (</span><a href=\"mailto:aidin.niamir@senckenberg.de\">aidin.niamir@senckenberg.de</a><span>)</span></p>",
+                    "url": "https://www.ipbes.net/assessment-reports/asia-pacific",
+                    "hasImage": 1,
+                    "libraryEditing": "admins",
+                    "libraryReading": "all",
+                    "fileEditing": "admins",
+                    "admins": [
+                        5820275,
+                        5825730,
+                        10318906
+                    ],
+                    "members": [
+                        12022430
+                    ]
+                }
+            },
+            {
+                "id": 2333011,
+                "version": 20,
+                "links": {
+                    "self": {
+                        "href": "https://api.zotero.org/groups/2333011",
+                        "type": "application/json"
+                    },
+                    "alternate": {
+                        "href": "https://www.zotero.org/groups/ipbes_ama",
+                        "type": "text/html"
+                    }
+                },
+                "meta": {
+                    "created": "2019-05-24T12:03:43Z",
+                    "lastModified": "2026-04-10T18:00:11Z",
+                    "numItems": 6189
+                },
+                "data": {
+                    "id": 2333011,
+                    "version": 20,
+                    "name": "IPBES AMA",
+                    "owner": 5760254,
+                    "type": "PublicClosed",
+                    "description": "<p>Library of the underlying references</p>\n<p><strong>Regional Assessment Report on Biodiversity and Ecosystem Services for the Americas</strong></p>\n<p>This library contains the references cited in the assessment report and its glossary.</p>\n<p>The tags indicate in which chapter(s) the references were cited.</p>\n<p>Download <a href=\"https://doi.org/10.5281/zenodo.3236252\" rel=\"nofollow\">the full assessment report</a></p>\n<p>See the <a href=\"https://www.ipbes.net/assessment-reports/americas\" rel=\"nofollow\">assessment information page on the IPBES website</a></p>\n<p><span>For enquiries, please contact the IPBES Data and Knowledge Unit (</span><a href=\"mailto:aidin.niamir@senckenberg.de\">aidin.niamir@senckenberg.de</a><span>)</span></p>",
+                    "url": "https://www.ipbes.net/assessment-reports/americas",
+                    "hasImage": 1,
+                    "libraryEditing": "admins",
+                    "libraryReading": "all",
+                    "fileEditing": "admins",
+                    "admins": [
+                        5820275,
+                        5825730,
+                        10318906
+                    ],
+                    "members": [
+                        12022430
+                    ]
+                }
+            },
+            {
+                "id": 2333088,
+                "version": 19,
+                "links": {
+                    "self": {
+                        "href": "https://api.zotero.org/groups/2333088",
+                        "type": "application/json"
+                    },
+                    "alternate": {
+                        "href": "https://www.zotero.org/groups/ipbes_ppa",
+                        "type": "text/html"
+                    }
+                },
+                "meta": {
+                    "created": "2019-05-24T14:32:20Z",
+                    "lastModified": "2026-01-05T18:31:53Z",
+                    "numItems": 3918
+                },
+                "data": {
+                    "id": 2333088,
+                    "version": 19,
+                    "name": "IPBES PPA",
+                    "owner": 5760254,
+                    "type": "PublicClosed",
+                    "description": "<p>Library of the underlying references</p>\n<p><strong>The Assessment Report of the Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services on Pollinators, Pollination and Food Production</strong></p>\n<p>This library contains the references cited in the assessment report and its glossary.</p>\n<p>The tags indicate in which chapter(s) the references were cited.</p>\n<p>Download <a href=\"https://doi.org/10.5281/zenodo.3402856\" rel=\"nofollow\">the full assessment report</a></p>\n<p>See the <a href=\"https://www.ipbes.net/assessment-reports/pollinators\" rel=\"nofollow\">assessment information page on the IPBES website</a></p>\n<p><span>For enquiries, please contact the IPBES Data and Knowledge Unit (</span><a href=\"mailto:aidin.niamir@senckenberg.de\">aidin.niamir@senckenberg.de</a><span>)</span></p>",
+                    "url": "https://www.ipbes.net/assessment-reports/pollinators",
+                    "hasImage": 1,
+                    "libraryEditing": "admins",
+                    "libraryReading": "all",
+                    "fileEditing": "admins",
+                    "admins": [
+                        5825730,
+                        10318906
+                    ],
+                    "members": [
+                        12022430
+                    ]
+                }
+            },
+            {
+                "id": 2333076,
+                "version": 22,
+                "links": {
+                    "self": {
+                        "href": "https://api.zotero.org/groups/2333076",
+                        "type": "application/json"
+                    },
+                    "alternate": {
+                        "href": "https://www.zotero.org/groups/ipbes_ldr",
+                        "type": "text/html"
+                    }
+                },
+                "meta": {
+                    "created": "2019-05-24T14:14:24Z",
+                    "lastModified": "2025-12-15T10:59:41Z",
+                    "numItems": 6975
+                },
+                "data": {
+                    "id": 2333076,
+                    "version": 22,
+                    "name": "IPBES LDR",
+                    "owner": 5760254,
+                    "type": "PublicClosed",
+                    "description": "<p>Library of the underlying references</p>\n<p><strong>The IPBES Assessment Report on Land Degradation and Restoration</strong></p>\n<p>This library contains the references cited in the assessment report and its glossary.</p>\n<p>The tags indicate in which chapter(s) the references were cited.</p>\n<p>Download <a href=\"https://doi.org/10.5281/zenodo.3237392\" rel=\"nofollow\">the full assessment report</a></p>\n<p>See the <a href=\"https://www.ipbes.net/assessment-reports/ldr\" rel=\"nofollow\">assessment information page on the IPBES website</a></p>\n<p><span>For enquiries, please contact the IPBES Data and Knowledge Unit (</span><a href=\"mailto:aidin.niamir@senckenberg.de\">aidin.niamir@senckenberg.de</a><span>)</span></p>",
+                    "url": "https://www.ipbes.net/assessment-reports/ldr",
+                    "hasImage": 1,
+                    "libraryEditing": "admins",
+                    "libraryReading": "all",
+                    "fileEditing": "admins",
+                    "admins": [
+                        5825730,
+                        10318906
+                    ],
+                    "members": [
+                        12022430,
+                        5820275
+                    ]
+                }
+            },
+            {
+                "id": 2345372,
+                "version": 116,
+                "links": {
+                    "self": {
+                        "href": "https://api.zotero.org/groups/2345372",
+                        "type": "application/json"
+                    },
+                    "alternate": {
+                        "href": "https://www.zotero.org/groups/ipbes_va",
+                        "type": "text/html"
+                    }
+                },
+                "meta": {
+                    "created": "2019-06-28T21:31:24Z",
+                    "lastModified": "2025-11-05T12:08:27Z",
+                    "numItems": 6256
+                },
+                "data": {
+                    "id": 2345372,
+                    "version": 116,
+                    "name": "IPBES VA",
+                    "owner": 5760254,
+                    "type": "PublicClosed",
+                    "description": "<p>Library of the underlying references<U+00A0></p>\n<p><strong class=\"font-bold\">Methodological Assessment Report on the Diverse Values and Valuation of Nature of the Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services</strong></p>\n<p>This library contains the references cited in the assessment report and its glossary.</p>\n<p>The tags indicate in which chapter(s) the references were cited.</p>\n<p>Download<U+00A0><a href=\"https://doi.org/10.5281/zenodo.6522522\" rel=\"nofollow\">the full assessment report</a></p>\n<p>See the <a href=\"https://www.ipbes.net/the-values-assessment\" rel=\"nofollow\">assessment information page on the IPBES website</a></p>\n<p>For enquiries, please contact the IPBES Data and Knowledge Unit<U+00A0> (aidin.niamir@senckenberg.de).</p>\n<p><U+00A0></p>",
+                    "url": "https://www.ipbes.net/the-values-assessment",
+                    "hasImage": 1,
+                    "libraryEditing": "admins",
+                    "libraryReading": "all",
+                    "fileEditing": "admins",
+                    "admins": [
+                        5761202,
+                        5825260,
+                        5825730,
+                        10318906
+                    ],
+                    "members": [
+                        45224,
+                        340628,
+                        385228,
+                        1022504,
+                        1780223,
+                        1900676,
+                        2135336,
+                        2163018,
+                        2260776,
+                        2911437,
+                        2973437,
+                        3156478,
+                        3736296,
+                        4566450,
+                        5055563,
+                        5827106,
+                        5827128,
+                        5827149,
+                        5827183,
+                        5827405,
+                        5827636,
+                        5827794,
+                        5827917,
+                        5827923,
+                        5827941,
+                        5831403,
+                        5832426,
+                        5835437,
+                        5835579,
+                        5835820,
+                        5836910,
+                        5839009,
+                        5843765,
+                        5852218,
+                        5857058,
+                        5866412,
+                        5866463,
+                        5866637,
+                        5866820,
+                        5868702,
+                        5879117,
+                        5882249,
+                        5894263,
+                        5940679,
+                        6200612,
+                        6230079,
+                        6232921,
+                        6419107,
+                        6516982,
+                        6594061,
+                        6673487,
+                        10785277,
+                        10795804,
+                        12022430,
+                        1862401,
+                        5833513,
+                        5867569,
+                        5878618,
+                        5878993,
+                        5886036,
+                        5887169,
+                        5888020,
+                        5888067,
+                        6170326,
+                        6170469,
+                        6170808,
+                        6172085,
+                        6184562,
+                        6187360,
+                        6202177,
+                        6229982,
+                        6277531,
+                        6474767,
+                        6475885,
+                        6528475,
+                        7138968,
+                        8238810,
+                        9676260,
+                        10924457
+                    ]
+                }
+            },
+            {
+                "id": 2344805,
+                "version": 159,
+                "links": {
+                    "self": {
+                        "href": "https://api.zotero.org/groups/2344805",
+                        "type": "application/json"
+                    },
+                    "alternate": {
+                        "href": "https://www.zotero.org/groups/ipbes_sua",
+                        "type": "text/html"
+                    }
+                },
+                "meta": {
+                    "created": "2019-06-27T12:56:24Z",
+                    "lastModified": "2025-04-10T08:41:51Z",
+                    "numItems": 9898
+                },
+                "data": {
+                    "id": 2344805,
+                    "version": 159,
+                    "name": "IPBES SUA",
+                    "owner": 5760254,
+                    "type": "PublicClosed",
+                    "description": "<p>Library of the underlying references</p>\n<p><strong><strong class=\"font-bold\">Thematic Assessment Report on the Sustainable Use of Wild Species of the Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services</strong></strong></p>\n<p>This library contains the references cited in the assessment report and its glossary.</p>\n<p>The tags indicate in which chapter(s) the references were cited.</p>\n<p>Download <a href=\"https://doi.org/10.5281/zenodo.6448567\" rel=\"nofollow\">the full assessment report</a></p>\n<p>See the <a href=\"https://www.ipbes.net/sustainable-use-assessment\" rel=\"nofollow\">assessment information page on the IPBES website</a></p>\n<p>For enquiries, please contact the IPBES Data and Knowledge Unit (<a href=\"mailto:aidin.niamir@senckenberg.de\">aidin.niamir@senckenberg.de</a>)</p>",
+                    "url": "https://www.ipbes.net/sustainable-use-assessment",
+                    "hasImage": 1,
+                    "libraryEditing": "admins",
+                    "libraryReading": "all",
+                    "fileEditing": "admins",
+                    "admins": [
+                        5825730,
+                        10318906
+                    ],
+                    "members": [
+                        12022430
+                    ]
+                }
+            },
+            {
+                "id": 2352922,
+                "version": 222,
+                "links": {
+                    "self": {
+                        "href": "https://api.zotero.org/groups/2352922",
+                        "type": "application/json"
+                    },
+                    "alternate": {
+                        "href": "https://www.zotero.org/groups/ipbes_ias",
+                        "type": "text/html"
+                    }
+                },
+                "meta": {
+                    "created": "2019-07-26T12:13:10Z",
+                    "lastModified": "2025-04-10T08:37:03Z",
+                    "numItems": 12878
+                },
+                "data": {
+                    "id": 2352922,
+                    "version": 222,
+                    "name": "IPBES IAS",
+                    "owner": 5760254,
+                    "type": "PublicClosed",
+                    "description": "<p>Library of the underlying references</p>\n<p><strong>Thematic Assessment of Invasive Alien Species and their Control of the Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services</strong></p>\n<p>This library contains the references cited in the assessment report and its glossary.</p>\n<p>The tags indicate in which chapter(s) the references were cited.</p>\n<p>Download <a href=\"https://zenodo.org/records/10795593\" rel=\"nofollow\">the full assessment report</a></p>\n<p>See the <a href=\"https://www.ipbes.net/ias\" rel=\"nofollow\">assessment information page on the IPBES website</a></p>\n<p>For enquiries, please contact the IPBES Data and Knowledge Unit (<a href=\"mailto:aidin.niamir@senckenberg.de\">aidin.niamir@senckenberg.de</a>)</p>",
+                    "url": "https://www.ipbes.net/ias",
+                    "hasImage": 1,
+                    "libraryEditing": "admins",
+                    "libraryReading": "all",
+                    "fileEditing": "admins",
+                    "admins": [
+                        5825730,
+                        10318906
+                    ],
+                    "members": [
+                        12022430
+                    ]
+                }
+            },
+            {
+                "id": 2333077,
+                "version": 52,
+                "links": {
+                    "self": {
+                        "href": "https://api.zotero.org/groups/2333077",
+                        "type": "application/json"
+                    },
+                    "alternate": {
+                        "href": "https://www.zotero.org/groups/ipbes_ga1",
+                        "type": "text/html"
+                    }
+                },
+                "meta": {
+                    "created": "2019-05-24T14:14:50Z",
+                    "lastModified": "2025-04-10T08:36:20Z",
+                    "numItems": 10642
+                },
+                "data": {
+                    "id": 2333077,
+                    "version": 52,
+                    "name": "IPBES GA1",
+                    "owner": 5760254,
+                    "type": "PublicClosed",
+                    "description": "<p><span>Library of the underlying references</span></p>\n<p><strong>Global Assessment Report on Biodiversity and Ecosystem Services of the Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services</strong></p>\n<p>This library contains the references cited in the assessment report and its glossary.</p>\n<p>The tags indicate in which chapter(s) the references were cited.</p>\n<p>Download <a href=\"https://doi.org/10.5281/zenodo.3831673\" rel=\"nofollow\">the full assessment report</a></p>\n<p>See the <a href=\"https://www.ipbes.net/global-assessment\" rel=\"nofollow\">assessment information page on the IPBES website</a></p>\n<p><span>For enquiries, please contact the IPBES Data and Knowledge Unit (</span><a href=\"mailto:aidin.niamir@senckenberg.de\">aidin.niamir@senckenberg.de</a><span>)</span></p>",
+                    "url": "https://ipbes.net/global-assessment",
+                    "hasImage": 1,
+                    "libraryEditing": "admins",
+                    "libraryReading": "all",
+                    "fileEditing": "admins",
+                    "admins": [
+                        5825730,
+                        10318906
+                    ],
+                    "members": [
+                        6130470,
+                        12022430
+                    ]
+                }
+            },
+            {
+                "id": 2603670,
+                "version": 73,
+                "links": {
+                    "self": {
+                        "href": "https://api.zotero.org/groups/2603670",
+                        "type": "application/json"
+                    },
+                    "alternate": {
+                        "href": "https://www.zotero.org/groups/ipcc-ipbes",
+                        "type": "text/html"
+                    }
+                },
+                "meta": {
+                    "created": "2020-11-06T09:48:34Z",
+                    "lastModified": "2025-03-25T04:27:01Z",
+                    "numItems": 1309
+                },
+                "data": {
+                    "id": 2603670,
+                    "version": 73,
+                    "name": "IPCC-IPBES",
+                    "owner": 5760254,
+                    "type": "PublicOpen",
+                    "description": "<p><span lang=\"en-us\" xml:lang=\"en-us\">In December 2020, 50 of the world<U+2019>s leading biodiversity and climate experts, selected by a 12-person Scientific Steering Committee assembled by IPBES and IPCC, participated in a four-day virtual workshop to examine the synergies and trade-offs </span><span lang=\"en-us\" xml:lang=\"en-us\">between biodiversity protection and climate change mitigation and adaptation. This represents the first-ever collaboration between the two intergovernmental science-policy bodies. The IPBES-IPCC co-sponsored workshop report on biodiversity and climate change, available below, was launched on 10 June 2021 at a virtual media conference.</span>More details available on <a title=\"IPBES-IPCC Co-Sponsored Workshop Report on Biodiversity and Climate Change\" href=\"https://ipbes.net/node/36668\" rel=\"nofollow\">https://ipbes.net/node/36668</a></p>",
+                    "url": "https://ipbes.net/events/ipbes-ipcc-co-sponsored-workshop-report-biodiversity-and-climate-change",
+                    "hasImage": 1,
+                    "libraryEditing": "admins",
+                    "libraryReading": "all",
+                    "fileEditing": "none",
+                    "admins": [
+                        6130470,
+                        10318906
+                    ],
+                    "members": [
+                        491767,
+                        668012,
+                        1968353,
+                        5260294,
+                        5825730,
+                        5866412,
+                        6170469,
+                        7185226,
+                        12022430,
+                        51747,
+                        641133,
+                        1252283,
+                        1422227,
+                        2634209,
+                        4828536,
+                        5385159,
+                        5761202,
+                        6824347,
+                        6922893,
+                        7105064,
+                        7185994,
+                        7188814,
+                        7188833,
+                        7189422,
+                        7190008,
+                        7192454,
+                        7193701,
+                        7212473,
+                        7212728,
+                        7222531,
+                        7231075,
+                        7231488,
+                        7232038,
+                        7258141,
+                        7284359,
+                        7320171,
+                        7322391,
+                        7323712,
+                        7386585,
+                        7408648,
+                        7420200,
+                        7423769,
+                        7424567,
+                        7427009,
+                        7433970,
+                        8014270,
+                        9649588,
+                        9964150,
+                        16764602
+                    ]
+                }
+            },
+            {
+                "id": 4937409,
+                "version": 16,
+                "links": {
+                    "self": {
+                        "href": "https://api.zotero.org/groups/4937409",
+                        "type": "application/json"
+                    },
+                    "alternate": {
+                        "href": "https://www.zotero.org/groups/nature_futures_framework",
+                        "type": "text/html"
+                    }
+                },
+                "meta": {
+                    "created": "2023-02-03T10:14:33Z",
+                    "lastModified": "2024-03-20T12:21:40Z",
+                    "numItems": 444
+                },
+                "data": {
+                    "id": 4937409,
+                    "version": 16,
+                    "name": "Nature Futures Framework",
+                    "owner": 5760254,
+                    "type": "PublicClosed",
+                    "description": "",
+                    "url": "",
+                    "libraryEditing": "admins",
+                    "libraryReading": "all",
+                    "fileEditing": "admins",
+                    "admins": [
+                        8831883,
+                        10318906,
+                        11036046,
+                        11069520
+                    ],
+                    "members": [
+                        9255571,
+                        12022430,
+                        10737318,
+                        11033362
+                    ]
+                }
+            },
+            {
+                "id": 2499181,
+                "version": 14,
+                "links": {
+                    "self": {
+                        "href": "https://api.zotero.org/groups/2499181",
+                        "type": "application/json"
+                    },
+                    "alternate": {
+                        "href": "https://www.zotero.org/groups/ipbes_pandemics",
+                        "type": "text/html"
+                    }
+                },
+                "meta": {
+                    "created": "2020-05-08T12:00:45Z",
+                    "lastModified": "2024-03-20T12:21:01Z",
+                    "numItems": 1085
+                },
+                "data": {
+                    "id": 2499181,
+                    "version": 14,
+                    "name": "IPBES pandemics",
+                    "owner": 5760254,
+                    "type": "PublicOpen",
+                    "description": "",
+                    "url": "",
+                    "libraryEditing": "admins",
+                    "libraryReading": "all",
+                    "fileEditing": "none",
+                    "admins": [
+                        10318906
+                    ],
+                    "members": [
+                        5761202,
+                        6130470,
+                        12022430
+                    ]
+                }
+            }
+        ]
+  recorded_at: 2026-10-08 14:28:02
+recorded_with: VCR-vcr/2.1.0

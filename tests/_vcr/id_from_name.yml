@@ -1,0 +1,168 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://www.zotero.org/ipbes
+  response:
+    status: 200
+    headers:
+      content-type: text/html; charset=UTF-8
+      content-length: '3973'
+      date: Thu, 08 Oct 2026 14:28:02 GMT
+      content-encoding: gzip
+      server: Apache
+      x-frame-options: SAMEORIGIN
+      content-security-policy: default-src 'self' https://api.zotero.org; script-src
+        'self' https://api.zotero.org 'nonce-z3cduiy1zk'; style-src 'self' 'nonce-c3v927hqo5';
+        img-src 'self' https://s3.amazonaws.com/ data:; frame-src 'self'; connect-src
+        'self' https://api.zotero.org https://api.zotero.org https://www.zotero.org
+        https://zoterofilestorage.s3.amazonaws.com https://zoterofilestorage.s3.us-east-1.amazonaws.com/
+        https://t0guvf0w17.execute-api.us-east-1.amazonaws.com https://services.zotero.org
+        wss://stream.zotero.org https://files.zotero.net; child-src 'self'; worker-src
+        'self'
+      strict-transport-security: max-age=31536000; includeSubDomains; preload
+      vary: Accept-Encoding
+      x-cache: Miss from cloudfront
+      via: 1.1 46b024d4c93b0e8b446bcf305ad21868.cloudfront.net (CloudFront)
+      x-amz-cf-pop: ZRH52-P1
+      alt-svc: h3=":443"; ma=86400
+      x-amz-cf-id: TIzdPTCtJtRLyVs3j3XV7At4AHHb3XZEkRhqz-kMdIlmMcIHXoVYcg==
+    body:
+      string: "<!DOCTYPE html>\n<html lang=\"en\" class=\"no-js\"> \n    <head> \n
+        \       <meta charset=\"utf-8\" />\n        <meta http-equiv=\"X-UA-Compatible\"
+        content=\"IE=edge\">\n        <meta name=\"viewport\" content=\"width=device-width,
+        initial-scale=1\">\n        <meta name=\"keywords\" content=\"Zotero, research,
+        tool, firefox, extension\"/>\n        <meta name=\"description\" content=\"Zotero
+        is a free, easy-to-use tool to help you collect, organize, cite, and share
+        research.\"/>\n\n        <meta name=\"robots\" content=\"nofollow\" />\n        <title>Zotero
+        | People > IPBES Secretariat</title>\n        <link rel=\"shortcut icon\"
+        type=\"image/ico\" href=\"/favicon.ico\" />\n\n        <!-- css -->\n        <link
+        rel=\"stylesheet\" href=\"/static/css/style.1698016953.css\" \n            type=\"text/css\"
+        media=\"screen\" charset=\"utf-8\"/>\n        <link rel=\"stylesheet\" href=\"/static/css/zotero_icons_sprite.1473223288.css\"
+        \n            type=\"text/css\" media=\"screen\" charset=\"utf-8\"/>\n        <link
+        rel=\"stylesheet\" href=\"/static/css/jquery-ui-1.8.12.custom.1473223288.css\"
+        \n            type=\"text/css\" media=\"screen\" charset=\"utf-8\"/>\n        <link
+        href=\"/static/library/zotero-publications/zotero-publications.1599487902.css\"
+        media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n<link charset=\"utf-8\"
+        href=\"/static/css/web-components.min.1769110983.css\" rel=\"stylesheet\"
+        type=\"text/css\" />        <!-- auto discovery links -->\n                    <script
+        type=\"text/javascript\" charset=\"utf-8\" src=\"/static/library/jquery/jquery-all.js\"></script>\n
+        \           <script type=\"text/javascript\" charset=\"utf-8\" src=\"/static/library/bootstrap/js/bootstrap.js\"></script>\n
+        \           <script type=\"text/javascript\" nonce=\"z3cduiy1zk\">\n                var
+        bootstrapButton = $.fn.button.noConflict() // return $.fn.button to previously
+        assigned value\n                $.fn.bootstrapBtn = bootstrapButton\n            </script>\n
+        \               \n        <!-- set jsConfig on window.zoteroConfig -->\n                <script
+        type=\"text/javascript\" charset=\"utf-8\" nonce=\"z3cduiy1zk\">\n            window.zoteroConfig
+        = {\"librarySettings\":{\"allowEdit\":1,\"allowUpload\":1},\"baseApiUrl\":\"https:\\/\\/api.zotero.org\",\"baseWebsiteUrl\":\"https:\\/\\/www.zotero.org\",\"baseFeedUrl\":\"https:\\/\\/api.zotero.org\",\"baseZoteroWebsiteUrl\":\"https:\\/\\/www.zotero.org\",\"baseDownloadUrl\":\"\",\"debugLogEndpoint\":\"https:\\/\\/www.zotero.org\\/user\\/submitdebug\",\"directDownloads\":false,\"proxyDownloads\":false,\"staticPath\":\"\\/static\",\"proxyPath\":\"\",\"ignoreLoggedInStatus\":true,\"storePrefsRemote\":false,\"proxy\":false,\"sessionAuth\":true,\"sessionCookieName\":\"zotero_www_session_v2\",\"breadcrumbsBase\":[{\"label\":\"username\",\"path\":\"\\/\"}],\"apiKey\":\"\",\"ajax\":1,\"apiVersion\":3,\"eventful\":true,\"useIndexedDB\":true,\"preferUrlItem\":false,\"CORSallowed\":true,\"locale\":\"en-US\",\"cacheStoreType\":\"localStorage\",\"preloadCachedLibrary\":true,\"rte\":\"ckeditor\",\"sortOrdering\":{\"dateAdded\":\"desc\",\"dateModified\":\"desc\",\"date\":\"desc\",\"year\":\"desc\",\"accessDate\":\"desc\",\"title\":\"asc\",\"creator\":\"asc\"},\"defaultSortColumn\":\"title\",\"defaultSortOrder\":\"asc\",\"largeFields\":{\"title\":1,\"abstractNote\":1,\"extra\":1},\"richTextFields\":{\"note\":1},\"maxFieldSummaryLength\":{\"title\":60},\"exportFormats\":[\"bibtex\",\"bookmarks\",\"mods\",\"refer\",\"rdf_bibliontology\",\"rdf_dc\",\"rdf_zotero\",\"ris\",\"wikipedia\"],\"exportFormatsMap\":{\"bibtex\":\"BibTeX\",\"bookmarks\":\"Bookmarks\",\"mods\":\"MODS\",\"refer\":\"Refer\\/BibIX\",\"rdf_bibliontology\":\"Bibliontology
+        RDF\",\"rdf_dc\":\"Unqualified Dublin Core RDF\",\"rdf_zotero\":\"Zotero RDF\",\"ris\":\"RIS\",\"wikipedia\":\"Wikipedia
+        Citation Templates\"},\"defaultApiArgs\":{\"order\":\"title\",\"sort\":\"asc\",\"limit\":50,\"start\":0,\"content\":\"json\",\"format\":\"atom\"},\"defaultPrefs\":{\"server_javascript_enabled\":true,\"debug_level\":3},\"recaptchaSitekey\":\"6LdDriYUAAAAAKxat_UYZ22IxvcUcLLBVAQTNGJe\",\"hcaptchaSitekey\":\"52483d36-da88-4f82-b4b6-4fec4c66c6ac\",\"turnstileSitekey\":\"0x4AAAAAABhv1awqMahwU2Kn\",\"captcha\":\"turnstile\",\"useS3\":\"1\",\"s3bucketName\":\"zotero.org\",\"imagePath\":\"\\/static\\/images\",\"profileImagePath\":\"images\\/settings\\/profile\",\"groupImagePath\":\"images\\/settings\\/group\",\"installData\":[]};\n\n
+        \           if(typeof window.zoteroData == 'undefined'){\n                window.zoteroData
+        = {};\n            }\n                                        window.zoteroData
+        = {\"profileUserID\":5760254,\"apiKey\":\"\"};\n                        var
+        baseURL = \"https://www.zotero.org\";\n            var baseDomain = \"https://www.zotero.org\";\n
+        \           var staticPath = \"/static\";\n            var zoterojsSearchContext
+        = \"support\";\n        </script>\n        <!-- headscript -->\n        <script
+        type=\"text/javascript\" src=\"/static/js/web-components.min.1775160902.js\"></script>
+        \   </head>\n    <body class=\"\">\n        <!-- Header -->\n        <header
+        role=\"banner\" class=\"container\">\n            <div class=\"center container\">\n
+        \                                               \n                <h1 id=\"logohead\">\n
+        \                   <a href=\"/\">\n                        <img src=\"/static/images/theme/zotero-logo.1775160902.svg\"
+        alt=\"Zotero\">\n                    </a>\n                </h1>\n            \n
+        \           <div id=\"login-links\">\n                                    <a
+        href=\"https://www.zotero.org/user/login\" title=\"Log In\">Log In</a>\n                    <a
+        href=\"https://www.zotero.org/user/register\" title=\"Register\">Register</a>\n
+        \                           </div>\n            \n                            <a
+        href=\"/storage\" class=\"button\" id=\"purchase-storage-link\"><img src=\"/static/images/theme/archive.png\"
+        /> Upgrade Storage</a>\n                        \n            <div id=\"navbar\"
+        class=\"container\">\n                <nav id=\"sitenav\">\n                    <ul>\n
+        \                                       <li class='selected'><a href=\"/\">Home</a></li>\n
+        \                                       <li ><a href=\"/groups/\">Groups</a></li>\n
+        \                                       <li ><a href=\"https://www.zotero.org/support/\">Documentation</a></li>\n
+        \                   <li ><a href=\"https://forums.zotero.org\">Forums</a></li>\n
+        \                   <li ><a href=\"https://www.zotero.org/getinvolved/\">Get
+        Involved</a></li>\n                    </ul>\n                </nav>\n                                <form
+        action=\"https://www.zotero.org/search/\" class=\"zform zsearch\" id=\"simple-search\">\n
+        \                   <div>\n                        <input type=\"text\" name=\"q\"
+        size=\"20\" id=\"header-search-query\"/>\n                        <button
+        class=\"button clear-field-button\" type=\"reset\"><span class=\"ui-icon ui-icon-circle-close\">&nbsp;</span></button>\n
+        \                       <input class=\"button\" type=\"submit\" value=\"Search\">\n
+        \                   </div>\n                </form>\n                            </div>\n
+        \       </div>\n        </header>\n        <div id=\"content\">\n            <div
+        class=\"center container\">\n            <!-- Output the breadcrumb if it's
+        set -->\n                            <div id=\"breadcrumbs\">\n                    <a
+        href='/'>Home</a> > <a href='/people'>People</a> > IPBES Secretariat                </div>\n
+        \                       \n            <!-- Output any stored messages -->\n
+        \                                                                                                           \n
+        \           <!-- hidden area for possible JS messages -->\n            <div
+        id=\"js-message\">\n                <ul id=\"js-message-list\">\n                </ul>\n
+        \           </div>\n\n            <!-- Output content -->\n            <div
+        id=\"user-profile\" class=\"major-col\">\n    <!-- Username Output -->\n    <h1>IPBES
+        Secretariat</h1>\n    <nav class=\"action-links\">\n        <ul>\n    \t<!--
+        CV Link -->\n                <!-- Library Link -->\n                                            </ul>\n
+        \   </nav>\n    <!-- Metafield Output -->\n    <div id=\"profile_metaFields\">\n
+        \                   <p>The Intergovernmental Science-Policy Platform on Biodiversity
+        and Ecosystem Services (IPBES) is an independent intergovernmental body, established
+        by member States in 2012. The objective of IPBES is to strengthen the science-policy
+        interface for biodiversity and ecosystem services for the conservation and
+        sustainable use of biodiversity, long-term human well-being and sustainable
+        development.</p>                            <h2>Location</h2>\n            <p>Bonn,
+        Germany</p>\n                            <h2>Disciplines</h2>\n            <ul>\n
+        \                           <li><a href=\"/search/q/Area Studies/type/people\">Area
+        Studies</a></li>\n                            <li><a href=\"/search/q/Geography/type/people\">Geography</a></li>\n
+        \                           <li><a href=\"/search/q/Urban Studies/type/people\">Urban
+        Studies</a></li>\n                            <li><a href=\"/search/q/Biology/type/people\">Biology</a></li>\n
+        \                           <li><a href=\"/search/q/Environmental Studies
+        and Forestry/type/people\">Environmental Studies and Forestry</a></li>\n                            <li><a
+        href=\"/search/q/Agriculture/type/people\">Agriculture</a></li>\n                        </ul>\n
+        \                           <h2>Affiliation</h2>\n            <p>UN Environment</p>\n
+        \       \n        \n        <div id=\"publications-container\">\n            \n
+        \       </div>\n    </div>\n</div>\n<div class=\"minor-col last-col\">\n    <!--
+        Profile Image -->\n    \t<img src=\"https://s3.amazonaws.com/zotero.org/images/settings/profile/5760254_200px.png\"
+        alt=\"Profile picture\" />\n                <!-- Invite to join your groups
+        -->\n    <div id='react-inviteToGroups'></div>\n    <!-- Groups List -->\n
+        \   <h2>Groups</h2>\n    <div id='react-userGroups'></div>\n</div>\n<script
+        type=\"text/javascript\" charset=\"utf-8\" src=\"/static/library/zotero-publications/zotero-publications.1599592160.js\"></script>\n\n<script
+        type=\"text/javascript\" charset=\"utf-8\" nonce=\"z3cduiy1zk\">\n        var
+        zoterojsClass = \"user_profile\";\n\n        var zoterojsSearchContext = \"people\";\n
+        \       var pubContainer = document.getElementById('publications-container');\n
+        \       \n        var zp = new ZoteroPublications({\n            'group':
+        'type',\n            'apiBase': 'api.zotero.org',\n            'zorgIntegration':
+        true,\n            'storeCitationPreference': true\n        });\n\n        var
+        timeout = setTimeout(function() {\n            pubContainer.classList.add('zotero-loading');\n
+        \       }, 500);\n\n        zp.getPublications(5760254).then(function(data)
+        {\n            clearTimeout(timeout);\n            pubContainer.classList.remove('zotero-loading');\n
+        \           if (data.length) {\n                \n                pubContainer.innerHTML
+        = '<h1 class=\"clearfix\">Publications</h1><div id=\"publications\"></div>';\n
+        \               zp.render(data, document.getElementById('publications'));\n
+        \           }\n        }).catch(function() {\n            clearTimeout(timeout);\n
+        \           pubContainer.classList.remove('zotero-loading');\n        });\n\n
+        \       ZoteroWebComponents.pageReady(function() {\n            if(document.getElementById('react-inviteToGroups'))
+        {\n                window.inviteToGroupsComponent = ReactDOM.render(\n                    React.createElement(ZoteroWebComponents.InviteToGroups,
+        {\"invitee\":{\"userID\":5760254,\"displayName\":\"IPBES Secretariat\"},\"userID\":0}),\n
+        \                   document.getElementById('react-inviteToGroups')\n                );\n
+        \           }\n\n            if(document.getElementById('react-userGroups'))
+        {\n                window.userGroups = ReactDOM.render(\n                    React.createElement(ZoteroWebComponents.UserGroups,
+        {\"userID\":5760254,\"titleOnly\":true}),\n                    document.getElementById('react-userGroups')\n
+        \               );\n            }\n        });\n</script>\n            </div>\n
+        \       </div>\n        <footer>\n            <div class=\"center container\">\n
+        \               <nav role=\"secondary\">\n                    <ul>\n                        <!--
+        <li><a href=\"#\">Give Us Feedback</a></li> -->\n                        <li><a
+        href=\"https://www.zotero.org/blog/\">Blog</a></li>\n                        <li><a
+        href=\"https://forums.zotero.org\">Forums</a></li>\n                        <li><a
+        href=\"https://www.zotero.org/support/dev/start\">Developers</a></li>\n                        <li><a
+        href=\"https://www.zotero.org/support/\">Documentation</a></li>\n                        <li><a
+        href=\"https://www.zotero.org/support/privacy\">Privacy</a></li>\n                        <li><a
+        href=\"https://www.zotero.org/getinvolved/\">Get Involved</a></li>\n                        <li><a
+        href=\"https://www.zotero.org/jobs\">Jobs</a></li>\n                        <li
+        class=\"last\"><a href=\"https://www.zotero.org/about/\">About</a></li>\n
+        \                   </ul>\n                </nav>\n                <p class=\"about\">Zotero
+        is a project of <a href=\"http://digitalscholar.org/\">Digital Scholar</a>,
+        a nonprofit organization dedicated to the development of software and services
+        for researchers and cultural heritage institutions, and is developed by a
+        <a href=\"/support/credits_and_acknowledgments\">global community</a>.</p>\n
+        \           </div>\n        </footer>\n        \n        <script type=\"text/javascript\"
+        charset=\"utf-8\" src=\"/static/js/_zoterowwwAll.bugly.1698016953.js\"></script>\n\n
+        \       <!-- End zoteroLibrary modules. -->\n                    <script type=\"text/javascript\"
+        charset=\"utf-8\" nonce=\"z3cduiy1zk\">\n                            </script>\n
+        \           </body>\n</html>\n"
+  recorded_at: 2026-10-08 14:28:02
+recorded_with: VCR-vcr/2.1.0
