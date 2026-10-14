@@ -1,6 +1,6 @@
 Package: zotFunc
 Title: Zotero Integration Functions
-Version: 0.0.0.9000
+Version: 0.1.0
 Authors@R: 
     person("Rainer ", "Krug", , "Rainer@Krugs.de", role = c("aut", "cre", "maintainer"))
 Description: Download complete Zotero group libraries via the Zotero Web API v3
