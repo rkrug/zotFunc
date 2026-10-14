@@ -12,7 +12,8 @@ get_groups_from_user(
   api_key = Sys.getenv("ZOTERO_API_IPBES"),
   update = TRUE,
   force = FALSE,
-  overwrite = FALSE
+  overwrite = FALSE,
+  max_active = 4
 )
 }
 \arguments{
@@ -37,6 +38,9 @@ are updated. Default: \code{TRUE}.}
 \item{force}{Passed to \code{get_group}: download even if the group is not outdated. Default: \code{FALSE}.}
 
 \item{overwrite}{Passed to \code{get_group}: replace existing group folders that are not previous downloads. Default: \code{FALSE}.}
+
+\item{max_active}{Passed to \code{get_group}: number of pages downloaded in parallel (1 to 4). Groups are
+downloaded one after the other. Default: \code{4}.}
 }
 \value{
 \code{NULL}, invisibly. Called for the downloads.

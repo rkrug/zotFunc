@@ -25,6 +25,14 @@ test_that("get_group() uses an existing empty folder without overwrite", {
   expect_true(file.exists(file.path(path, ".version")))
 })
 
+test_that("get_group() rejects max_active outside 1 to 4 before touching an existing download", {
+  path <- fake_download()
+  for (n in list(0, 5, 2.5, 1:2, "4")) {
+    expect_error(get_group(test_group_id, path, max_active = n), "`max_active` must be 1, 2, 3 or 4")
+  }
+  expect_true(file.exists(file.path(path, ".version")))
+})
+
 test_that("get_group() errors if group_id is NULL and there is no .id", {
   path <- withr::local_tempdir()
   expect_error(get_group(path = path), "has no `.id` file")
@@ -81,9 +89,10 @@ test_that("get_group() downloads all records and writes .id, .name and .version"
     httr2::resp_header("Total-Results") |>
     as.integer()
 
-  # total is unknown before the first response
-  expect_match(msgs[1], "starting at record 0 from \\? \\.\\.\\.")
-  expect_match(msgs[2], paste0("starting at record 100 from ", total, " "))
+  # first page alone, the other pages (fewer than 5) in one parallel chunk
+  expect_identical(msgs[1], "Downloading records 1 to 100 ...\n")
+  expect_identical(msgs[2], paste0("Downloading records 101 to ", total, " of ", total, " ...\n"))
+  expect_length(msgs, 2)
 
   # all pages including the last one
   expect_identical(count_csljson(path), total)
@@ -150,7 +159,7 @@ test_that("get_group() writes json to .format for output_format = NULL", {
   local_mocked_bindings(get_group_version = function(...) 1L, get_group_name = function(...) "x")
   local_mocked_bindings(
     req_perform = function(req, ...) {
-      httr2::response(headers = list(Link = ""), body = charToRaw("[]"))
+      httr2::response(headers = list(`Total-Results` = "0"), body = charToRaw("[]"))
     },
     .package = "httr2"
   )
@@ -158,4 +167,48 @@ test_that("get_group() writes json to .format for output_format = NULL", {
   suppressMessages(get_group(test_group_id, path))
   expect_identical(readLines(file.path(path, ".format")), "json")
   expect_length(list.files(path, pattern = "^_0\\.json$"), 1)
+})
+
+test_that("get_group() downloads the pages after the first in chunks of max_active", {
+  local_mocked_bindings(get_group_version = function(...) 1L, get_group_name = function(...) "x")
+  page <- function(req) {
+    httr2::response(headers = list(`Total-Results` = "450"), body = charToRaw(httr2::url_parse(req$url)$query$start))
+  }
+  chunks <- list()
+  local_mocked_bindings(
+    req_perform = function(req, ...) page(req),
+    req_perform_parallel = function(reqs, max_active, ...) {
+      chunks[[length(chunks) + 1]] <<- vapply(reqs, function(r) httr2::url_parse(r$url)$query$start, "")
+      lapply(reqs, page)
+    },
+    .package = "httr2"
+  )
+  path <- file.path(withr::local_tempdir(), "dl")
+  msgs <- capture_messages(get_group(test_group_id, path, output_format = "csljson", max_active = 3))
+
+  expect_identical(chunks, list(c("100", "200", "300"), "400"))
+  expect_identical(msgs[3], "Downloading records 401 to 450 of 450 ...\n")
+  for (start in c(0, 100, 200, 300, 400)) {
+    expect_identical(readLines(file.path(path, paste0("csljson_", start, ".json"))), as.character(start))
+  }
+})
+
+test_that("get_group() errors if the API does not return Total-Results", {
+  local_mocked_bindings(get_group_version = function(...) 1L)
+  local_mocked_bindings(
+    req_perform = function(req, ...) httr2::response(body = charToRaw("[]")),
+    .package = "httr2"
+  )
+  path <- file.path(withr::local_tempdir(), "dl")
+  expect_error(suppressMessages(get_group(test_group_id, path)), "Total-Results")
+})
+
+test_that("wait_backoff() pauses for the longest Backoff and is silent without one", {
+  backoff <- function(secs) httr2::response(headers = list(Backoff = secs))
+  expect_silent(wait_backoff(list(httr2::response(), httr2::response())))
+  expect_message(
+    elapsed <- system.time(wait_backoff(list(httr2::response(), backoff("0.2"), backoff("0.1"))))[["elapsed"]],
+    "waiting 0.2 seconds"
+  )
+  expect_gte(elapsed, 0.2)
 })

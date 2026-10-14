@@ -11,7 +11,8 @@ get_group(
   api_key = NULL,
   update = TRUE,
   force = FALSE,
-  overwrite = FALSE
+  overwrite = FALSE,
+  max_active = 4
 )
 }
 \arguments{
@@ -52,6 +53,10 @@ download is an error. Default: \code{TRUE}.}
 
 \item{overwrite}{If \code{TRUE}, an existing non-empty \code{path} that is not a previous download is deleted and replaced.
 If \code{FALSE}, this is an error. Default: \code{FALSE}.}
+
+\item{max_active}{Number of pages (of 100 records) downloaded in parallel, from 1 to 4 (the maximum
+number of concurrent requests Zotero asks for). Lower it if Zotero keeps answering with \verb{429 Too Many Requests}.
+Default: \code{4}.}
 }
 \value{
 The \code{path} where the data is saved (also when nothing was downloaded).
@@ -75,6 +80,13 @@ an error is raised; if the versions are identical nothing is downloaded unless \
 The output format is stored in \code{.format} (\code{json} for \code{output_format = NULL}). If \code{output_format} is not
 given, it is read from there. If it is given and differs from \code{.format}, the group is downloaded again
 in the new format, even if it is up to date.
+
+The first page is downloaded alone, as it gives the number of records. The remaining pages are downloaded
+in parallel, \code{max_active} at a time, following the
+\href{https://www.zotero.org/support/dev/web_api/v3/basics#rate_limiting}{rate limits of the Zotero API}:
+no more than 4 concurrent requests, a \code{Backoff} header pauses the download for the given number of
+seconds after the running requests, and a \code{429} or \code{503} response is retried after its \code{Retry-After}
+(or with exponential backoff), pausing all other requests as well.
 
 For further information about the allowed formats and other details on the API see
 \url{https://www.zotero.org/support/dev/web_api/v3/start}.

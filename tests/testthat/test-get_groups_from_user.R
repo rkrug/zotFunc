@@ -115,16 +115,16 @@ test_that("get_groups_from_user() keeps each group's .format unless output_forma
   expect_identical(formats, list("1" = "bibtex", "2" = "bibtex"))
 })
 
-test_that("get_groups_from_user() passes overwrite, update and force to get_group()", {
+test_that("get_groups_from_user() passes overwrite, update, force and max_active to get_group()", {
   seen <- NULL
   local_mocked_bindings(
     get_groupids_from_user = function(...) c(a = "1"),
-    get_group = function(...) seen <<- list(...)[c("update", "force", "overwrite")]
+    get_group = function(...) seen <<- list(...)[c("update", "force", "overwrite", "max_active")]
   )
   get_groups_from_user(
     zotero_user_id = "42", path = withr::local_tempdir(), api_key = NULL,
-    update = TRUE, force = TRUE, overwrite = TRUE
+    update = TRUE, force = TRUE, overwrite = TRUE, max_active = 2
   ) |>
     suppressMessages()
-  expect_identical(seen, list(update = TRUE, force = TRUE, overwrite = TRUE))
+  expect_identical(seen, list(update = TRUE, force = TRUE, overwrite = TRUE, max_active = 2))
 })

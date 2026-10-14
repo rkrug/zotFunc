@@ -28,15 +28,13 @@ example `https://www.zotero.org/groups/4937409/nature_futures_framework`.
 
 ```{r}
 get_group(4937409, path = "nff", output_format = "bibtex")
-#> Downloading 100 records starting at record 0 from ? ...
-#> Downloading 100 records starting at record 100 from 374 ...
-#> Downloading 100 records starting at record 200 from 374 ...
-#> Downloading 100 records starting at record 300 from 374 ...
+#> Downloading records 1 to 100 ...
+#> Downloading records 101 to 374 of 374 ...
 #> [1] "nff"
 ```
 
-The total (`374`) is only known after the first response, so the first line
-shows `?`.
+The total (`374`) is only known after the first page. The remaining pages are
+then downloaded in parallel, up to four at a time.
 
 The folder now holds one file per 100 records, plus four files describing the
 download:
