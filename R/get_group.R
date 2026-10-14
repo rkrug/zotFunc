@@ -5,6 +5,8 @@
 #' This function uses the Zotero API to retrieve data from a Zotero group. It downloads
 #' the data in the format specified in `output_format`
 #' and saves it in batches of 100 records to the folder specified by the `path` parameter.
+#' Notes and attachments count as records for the API but are not exported in most formats, so pages
+#' without any exported record (empty, or only the header for `csv`) are not saved.
 #'
 #' **NB: An existing `path` that is not a previous download (no `.version`) is only deleted and replaced
 #' if `overwrite = TRUE`; otherwise an error is raised. An empty folder is used as is.**
@@ -61,7 +63,7 @@
 #' @param max_active Number of pages (of 100 records) downloaded in parallel, from 1 to 4 (the maximum
 #'   number of concurrent requests Zotero asks for). Lower it if Zotero keeps answering with `429 Too Many Requests`.
 #'   Default: `4`.
-#' @importFrom httr2 request req_headers req_url_query req_perform req_perform_parallel resp_header resp_body_string req_retry resp_status
+#' @importFrom httr2 request req_headers req_url_query req_perform req_perform_parallel resp_header resp_has_body resp_body_string req_retry resp_status
 #' @importFrom utils read.csv write.table
 #'
 #' @return The `path` where the data is saved (also when nothing was downloaded).
@@ -242,8 +244,14 @@ get_group <- function(
   )
 
   save_page <- function(resp, start) {
+    body <- if (httr2::resp_has_body(resp)) httr2::resp_body_string(resp) else ""
+    # pages of only notes and attachments contain no records in the export formats (csv: header only)
+    is_empty <- if (format_name == "csv") !grepl("\n", trimws(body)) else trimws(body) == ""
+    if (is_empty) {
+      return()
+    }
     writeLines(
-      httr2::resp_body_string(resp),
+      body,
       con = file.path(
         tmp_path,
         paste0(output_format, "_", start, ext)

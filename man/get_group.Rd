@@ -68,6 +68,8 @@ This function retrieves data from a Zotero group using the Zotero API.
 This function uses the Zotero API to retrieve data from a Zotero group. It downloads
 the data in the format specified in \code{output_format}
 and saves it in batches of 100 records to the folder specified by the \code{path} parameter.
+Notes and attachments count as records for the API but are not exported in most formats, so pages
+without any exported record (empty, or only the header for \code{csv}) are not saved.
 
 \strong{NB: An existing \code{path} that is not a previous download (no \code{.version}) is only deleted and replaced
 if \code{overwrite = TRUE}; otherwise an error is raised. An empty folder is used as is.}

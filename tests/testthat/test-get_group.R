@@ -212,3 +212,30 @@ test_that("wait_backoff() pauses for the longest Backoff and is silent without o
   )
   expect_gte(elapsed, 0.2)
 })
+
+test_that("get_group() does not save pages without records (csv header only, empty)", {
+  local_mocked_bindings(get_group_version = function(...) 1L, get_group_name = function(...) "x")
+  bodies <- list(
+    "0" = "\"Key\",\"Title\"",
+    "100" = "\"Key\",\"Title\"\n\"A\",\"a\"",
+    "200" = "\"Key\",\"Title\"\r\n"
+  )
+  page <- function(req) {
+    start <- httr2::url_parse(req$url)$query$start
+    httr2::response(headers = list(`Total-Results` = "300"), body = charToRaw(bodies[[start]]))
+  }
+  local_mocked_bindings(
+    req_perform = function(req, ...) page(req),
+    req_perform_parallel = function(reqs, ...) lapply(reqs, page),
+    .package = "httr2"
+  )
+  path <- file.path(withr::local_tempdir(), "dl")
+  suppressMessages(get_group(test_group_id, path, output_format = "csv"))
+  expect_identical(list.files(path), "csv_100.csv")
+
+  # empty bodies are skipped in the other export formats
+  bodies <- list("0" = "", "100" = "@book{a}", "200" = " \n")
+  path <- file.path(withr::local_tempdir(), "dl2")
+  suppressMessages(get_group(test_group_id, path, output_format = "bibtex"))
+  expect_identical(list.files(path), "bibtex_100.bib")
+})
