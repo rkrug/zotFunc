@@ -32,6 +32,9 @@ most complete format but also the slowest.
 
 Each page of 100 records is saved as `<format>_<first record>.<extension>`,
 for example `bibtex_300.bib` or `csljson_0.json`.
+Zotero counts notes and attachments as records, but most export formats skip
+them. A page holding only notes and attachments would be empty (for `csv`: only
+the header), so it is not saved, and some numbers can be missing.
 
 ## Parallel download and rate limits
 
