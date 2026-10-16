@@ -19,7 +19,8 @@ get_groups_from_user(
   api_key = Sys.getenv("ZOTERO_API_IPBES"),
   update = TRUE,
   force = FALSE,
-  overwrite = FALSE
+  overwrite = FALSE,
+  max_active = 4
 )
 ```
 
@@ -70,6 +71,11 @@ get_groups_from_user(
 
   Passed to `get_group`: replace existing group folders that are not
   previous downloads. Default: `FALSE`.
+
+- max_active:
+
+  Passed to `get_group`: number of pages downloaded in parallel (1 to
+  4). Groups are downloaded one after the other. Default: `4`.
 
 ## Value
 

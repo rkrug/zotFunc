@@ -12,7 +12,8 @@ get_group(
   api_key = NULL,
   update = TRUE,
   force = FALSE,
-  overwrite = FALSE
+  overwrite = FALSE,
+  max_active = 4
 )
 ```
 
@@ -89,6 +90,12 @@ get_group(
   download is deleted and replaced. If `FALSE`, this is an error.
   Default: `FALSE`.
 
+- max_active:
+
+  Number of pages (of 100 records) downloaded in parallel, from 1 to 4
+  (the maximum number of concurrent requests Zotero asks for). Lower it
+  if Zotero keeps answering with `429 Too Many Requests`. Default: `4`.
+
 ## Value
 
 The `path` where the data is saved (also when nothing was downloaded).
@@ -98,7 +105,9 @@ The `path` where the data is saved (also when nothing was downloaded).
 This function uses the Zotero API to retrieve data from a Zotero group.
 It downloads the data in the format specified in `output_format` and
 saves it in batches of 100 records to the folder specified by the `path`
-parameter.
+parameter. Notes and attachments count as records for the API but are
+not exported in most formats, so pages without any exported record
+(empty, or only the header for `csv`) are not saved.
 
 **NB: An existing `path` that is not a previous download (no `.version`)
 is only deleted and replaced if `overwrite = TRUE`; otherwise an error
@@ -117,6 +126,15 @@ The output format is stored in `.format` (`json` for
 `output_format = NULL`). If `output_format` is not given, it is read
 from there. If it is given and differs from `.format`, the group is
 downloaded again in the new format, even if it is up to date.
+
+The first page is downloaded alone, as it gives the number of records.
+The remaining pages are downloaded in parallel, `max_active` at a time,
+following the [rate limits of the Zotero
+API](https://www.zotero.org/support/dev/web_api/v3/basics#rate_limiting):
+no more than 4 concurrent requests, a `Backoff` header pauses the
+download for the given number of seconds after the running requests, and
+a `429` or `503` response is retried after its `Retry-After` (or with
+exponential backoff), pausing all other requests as well.
 
 For further information about the allowed formats and other details on
 the API see <https://www.zotero.org/support/dev/web_api/v3/start>.

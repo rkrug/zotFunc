@@ -20,7 +20,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">zotFunc</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,7 +59,7 @@
       <h1>Quickstart</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/rkrug/zotFunc/blob/main/vignettes/zotFunc.Rmd" class="external-link"><code>vignettes/zotFunc.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/rkrug/zotFunc/blob/v0.1.0/vignettes/zotFunc.Rmd" class="external-link"><code>vignettes/zotFunc.Rmd</code></a></small>
       <div class="d-none name"><code>zotFunc.Rmd</code></div>
     </div>
 
@@ -79,13 +79,12 @@ URL, for example
 <code>https://www.zotero.org/groups/4937409/nature_futures_framework</code>.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/get_group.html">get_group</a></span><span class="op">(</span><span class="fl">4937409</span>, path <span class="op">=</span> <span class="st">"nff"</span>, output_format <span class="op">=</span> <span class="st">"bibtex"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Downloading 100 records starting at record 0 from ? ...</span></span>
-<span><span class="co">#&gt; Downloading 100 records starting at record 100 from 374 ...</span></span>
-<span><span class="co">#&gt; Downloading 100 records starting at record 200 from 374 ...</span></span>
-<span><span class="co">#&gt; Downloading 100 records starting at record 300 from 374 ...</span></span>
+<span><span class="co">#&gt; Downloading records 1 to 100 ...</span></span>
+<span><span class="co">#&gt; Downloading records 101 to 374 of 374 ...</span></span>
 <span><span class="co">#&gt; [1] "nff"</span></span></code></pre></div>
-<p>The total (<code>374</code>) is only known after the first response,
-so the first line shows <code>?</code>.</p>
+<p>The total (<code>374</code>) is only known after the first page. The
+remaining pages are then downloaded in parallel, up to four at a
+time.</p>
 <p>The folder now holds one file per 100 records, plus four files
 describing the download:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">

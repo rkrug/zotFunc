@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">zotFunc</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,7 +33,7 @@
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Get Zotero Group Data</h1>
-      <small class="dont-index">Source: <a href="https://github.com/rkrug/zotFunc/blob/main/R/get_group.R" class="external-link"><code>R/get_group.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/rkrug/zotFunc/blob/v0.1.0/R/get_group.R" class="external-link"><code>R/get_group.R</code></a></small>
       <div class="d-none name"><code>get_group.Rd</code></div>
     </div>
 
@@ -50,7 +50,8 @@
 <span>  api_key <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  update <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  force <span class="op">=</span> <span class="cn">FALSE</span>,</span>
-<span>  overwrite <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span>  overwrite <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  max_active <span class="op">=</span> <span class="fl">4</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -105,6 +106,12 @@ download is an error. Default: <code>TRUE</code>.</p></dd>
 <dd><p>If <code>TRUE</code>, an existing non-empty <code>path</code> that is not a previous download is deleted and replaced.
 If <code>FALSE</code>, this is an error. Default: <code>FALSE</code>.</p></dd>
 
+
+<dt id="arg-max-active">max_active<a class="anchor" aria-label="anchor" href="#arg-max-active"></a></dt>
+<dd><p>Number of pages (of 100 records) downloaded in parallel, from 1 to 4 (the maximum
+number of concurrent requests Zotero asks for). Lower it if Zotero keeps answering with <code>429 Too Many Requests</code>.
+Default: <code>4</code>.</p></dd>
+
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
@@ -114,7 +121,9 @@ If <code>FALSE</code>, this is an error. Default: <code>FALSE</code>.</p></dd>
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>This function uses the Zotero API to retrieve data from a Zotero group. It downloads
 the data in the format specified in <code>output_format</code>
-and saves it in batches of 100 records to the folder specified by the <code>path</code> parameter.</p>
+and saves it in batches of 100 records to the folder specified by the <code>path</code> parameter.
+Notes and attachments count as records for the API but are not exported in most formats, so pages
+without any exported record (empty, or only the header for <code>csv</code>) are not saved.</p>
 <p><strong>NB: An existing <code>path</code> that is not a previous download (no <code>.version</code>) is only deleted and replaced
 if <code>overwrite = TRUE</code>; otherwise an error is raised. An empty folder is used as is.</strong></p>
 <p>After the download, the group id and the library version at the start of the download are written to
@@ -124,6 +133,12 @@ an error is raised; if the versions are identical nothing is downloaded unless <
 <p>The output format is stored in <code>.format</code> (<code>json</code> for <code>output_format = NULL</code>). If <code>output_format</code> is not
 given, it is read from there. If it is given and differs from <code>.format</code>, the group is downloaded again
 in the new format, even if it is up to date.</p>
+<p>The first page is downloaded alone, as it gives the number of records. The remaining pages are downloaded
+in parallel, <code>max_active</code> at a time, following the
+<a href="https://www.zotero.org/support/dev/web_api/v3/basics#rate_limiting" class="external-link">rate limits of the Zotero API</a>:
+no more than 4 concurrent requests, a <code>Backoff</code> header pauses the download for the given number of
+seconds after the running requests, and a <code>429</code> or <code>503</code> response is retried after its <code>Retry-After</code>
+(or with exponential backoff), pausing all other requests as well.</p>
 <p>For further information about the allowed formats and other details on the API see
 <a href="https://www.zotero.org/support/dev/web_api/v3/start" class="external-link">https://www.zotero.org/support/dev/web_api/v3/start</a>.</p>
     </div>
