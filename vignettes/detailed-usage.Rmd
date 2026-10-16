@@ -32,6 +32,32 @@ most complete format but also the slowest.
 
 Each page of 100 records is saved as `<format>_<first record>.<extension>`,
 for example `bibtex_300.bib` or `csljson_0.json`.
+Zotero counts notes and attachments as records, but most export formats skip
+them. A page holding only notes and attachments would be empty (for `csv`: only
+the header), so it is not saved, and some numbers can be missing.
+
+## Parallel download and rate limits
+
+The first page is downloaded alone, as its response gives the number of
+records. The other pages are downloaded in parallel, `max_active` (default `4`)
+at a time. This follows the
+[rate limits of the Zotero API](https://www.zotero.org/support/dev/web_api/v3/basics#rate_limiting):
+
+- never more than 4 concurrent requests, so `max_active` must be 1 to 4;
+- a `Backoff` header pauses the download for the requested number of seconds
+  once the running requests are done;
+- a `429 Too Many Requests` or `503` response is retried after its
+  `Retry-After` (or with exponential backoff), and all other requests wait as
+  well.
+
+If Zotero keeps answering with `429`, download fewer pages at a time:
+
+```{r}
+get_group(path = "nff", force = TRUE, max_active = 1)
+```
+
+`get_groups_from_user()` passes `max_active` on, but downloads the groups one
+after the other.
 
 ## The files describing a download
 

@@ -25,6 +25,8 @@
 #'   are updated. Default: `TRUE`.
 #' @param overwrite Passed to `get_group`: replace existing group folders that are not previous downloads. Default: `FALSE`.
 #' @param force Passed to `get_group`: download even if the group is not outdated. Default: `FALSE`.
+#' @param max_active Passed to `get_group`: number of pages downloaded in parallel (1 to 4). Groups are
+#'   downloaded one after the other. Default: `4`.
 #'
 #' @return `NULL`, invisibly. Called for the downloads.
 #'
@@ -43,7 +45,8 @@ get_groups_from_user <- function(
   api_key = Sys.getenv("ZOTERO_API_IPBES"),
   update = TRUE,
   force = FALSE,
-  overwrite = FALSE
+  overwrite = FALSE,
+  max_active = 4
 ) {
   if (dir.exists(path)) {
     if (!update) {
@@ -137,7 +140,8 @@ get_groups_from_user <- function(
           api_key = api_key,
           update = update,
           force = force,
-          overwrite = overwrite
+          overwrite = overwrite,
+          max_active = max_active
         )
         # if no format is given, an existing group download keeps its own `.format`
         if (!missing(output_format) || !file.exists(file.path(group_path, ".format"))) {

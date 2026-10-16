@@ -1,6 +1,6 @@
 Package: zotFunc
 Title: Zotero Integration Functions
-Version: 0.0.0.9000
+Version: 0.1.0
 Authors@R: 
     person("Rainer ", "Krug", , "Rainer@Krugs.de", role = c("aut", "cre", "maintainer"))
 Description: Download complete Zotero group libraries via the Zotero Web API v3
@@ -12,7 +12,7 @@ Roxygen: list(markdown = TRUE)
 URL: https://github.com/rkrug/zotFunc, https://rkrug.github.io/zotFunc/
 BugReports: https://github.com/rkrug/zotFunc/issues
 Config/roxygen2/version: 8.0.0
-Imports: httr2
+Imports: httr2 (>= 1.1.0)
 Suggests:
     jsonlite,
     knitr,

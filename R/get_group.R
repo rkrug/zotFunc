@@ -5,6 +5,8 @@
 #' This function uses the Zotero API to retrieve data from a Zotero group. It downloads
 #' the data in the format specified in `output_format`
 #' and saves it in batches of 100 records to the folder specified by the `path` parameter.
+#' Notes and attachments count as records for the API but are not exported in most formats, so pages
+#' without any exported record (empty, or only the header for `csv`) are not saved.
 #'
 #' **NB: An existing `path` that is not a previous download (no `.version`) is only deleted and replaced
 #' if `overwrite = TRUE`; otherwise an error is raised. An empty folder is used as is.**
@@ -17,6 +19,13 @@
 #' The output format is stored in `.format` (`json` for `output_format = NULL`). If `output_format` is not
 #' given, it is read from there. If it is given and differs from `.format`, the group is downloaded again
 #' in the new format, even if it is up to date.
+#'
+#' The first page is downloaded alone, as it gives the number of records. The remaining pages are downloaded
+#' in parallel, `max_active` at a time, following the
+#' [rate limits of the Zotero API](https://www.zotero.org/support/dev/web_api/v3/basics#rate_limiting):
+#' no more than 4 concurrent requests, a `Backoff` header pauses the download for the given number of
+#' seconds after the running requests, and a `429` or `503` response is retried after its `Retry-After`
+#' (or with exponential backoff), pausing all other requests as well.
 #'
 #' For further information about the allowed formats and other details on the API see
 #' [https://www.zotero.org/support/dev/web_api/v3/start](https://www.zotero.org/support/dev/web_api/v3/start).
@@ -51,7 +60,10 @@
 #' @param overwrite If `TRUE`, an existing non-empty `path` that is not a previous download is deleted and replaced.
 #'   If `FALSE`, this is an error. Default: `FALSE`.
 #' @param force If `TRUE`, download even if the downloaded version equals the server version. If `FALSE`, only download if the server version is larger. Default: `FALSE`.
-#' @importFrom httr2 request req_headers req_url_query req_perform resp_headers resp_header resp_body_string req_retry resp_status
+#' @param max_active Number of pages (of 100 records) downloaded in parallel, from 1 to 4 (the maximum
+#'   number of concurrent requests Zotero asks for). Lower it if Zotero keeps answering with `429 Too Many Requests`.
+#'   Default: `4`.
+#' @importFrom httr2 request req_headers req_url_query req_perform req_perform_parallel resp_header resp_has_body resp_body_string req_retry resp_status
 #' @importFrom utils read.csv write.table
 #'
 #' @return The `path` where the data is saved (also when nothing was downloaded).
@@ -77,8 +89,13 @@ get_group <- function(
   api_key = NULL,
   update = TRUE,
   force = FALSE,
-  overwrite = FALSE
+  overwrite = FALSE,
+  max_active = 4
 ) {
+  if (!is.numeric(max_active) || !isTRUE(max_active %in% 1:4)) {
+    stop("`max_active` must be 1, 2, 3 or 4 (Zotero asks for no more than 4 concurrent requests).")
+  }
+
   format_file <- file.path(path, ".format")
   local_format <- if (file.exists(format_file)) {
     trimws(readLines(format_file, n = 1, warn = FALSE))
@@ -216,9 +233,6 @@ get_group <- function(
   # version before the download: changes during the download trigger a re-download next time
   version <- get_group_version(group_id, api_key = api_key)
 
-  next_start <- 0
-  total <- "?"
-
   tmp_path <- tempfile()
   on.exit(
     unlink(tmp_path, recursive = TRUE)
@@ -229,45 +243,51 @@ get_group <- function(
     recursive = TRUE
   )
 
-  repeat {
+  save_page <- function(resp, start) {
+    body <- if (httr2::resp_has_body(resp)) httr2::resp_body_string(resp) else ""
+    # pages of only notes and attachments contain no records in the export formats (csv: header only)
+    is_empty <- if (format_name == "csv") !grepl("\n", trimws(body)) else trimws(body) == ""
+    if (is_empty) {
+      return()
+    }
+    writeLines(
+      body,
+      con = file.path(
+        tmp_path,
+        paste0(output_format, "_", start, ext)
+      )
+    )
+  }
+
+  # the first page gives the number of records, the other pages are downloaded in parallel
+  message("Downloading records 1 to 100 ...")
+  first <- req |>
+    httr2::req_perform()
+  save_page(first, 0)
+  wait_backoff(list(first))
+
+  total <- as.integer(httr2::resp_header(first, "Total-Results", default = NA))
+  if (is.na(total)) {
+    stop("The Zotero API did not return the number of records (`Total-Results`).")
+  }
+
+  starts <- seq.int(100L, by = 100L, length.out = max(0, ceiling(total / 100) - 1))
+  # ponytail: each chunk waits for its slowest page, so that `Backoff` can pause between chunks
+  for (chunk in split(starts, ceiling(seq_along(starts) / max_active))) {
     message(
-      "Downloading 100 records starting at record ",
-      next_start,
-      " from ",
+      "Downloading records ",
+      chunk[1] + 1L,
+      " to ",
+      min(max(chunk) + 100L, total),
+      " of ",
       total,
       " ..."
     )
-    old_start <- next_start
-
-    req <- req |>
-      httr2::req_url_query(
-        "start" = next_start
-      )
-
-    resp <- req |>
-      httr2::req_perform()
-
-    total <- httr2::resp_header(resp, "Total-Results", default = "?")
-
-    writeLines(
-      httr2::resp_body_string(resp),
-      con = file.path(
-        tmp_path,
-        paste0(output_format, "_", old_start, ext)
-      )
-    )
-
-    next_start <- resp |>
-      httr2::resp_headers(filter = "link") |>
-      as.character() |>
-      strsplit(split = "\",") |>
-      unlist() |>
-      grep(pattern = "\"next", value = TRUE) |>
-      gsub(pattern = ".*start=([0-9]+).*", replacement = "\\1")
-
-    if (length(next_start) == 0) {
-      break()
-    }
+    resps <- chunk |>
+      lapply(function(start) httr2::req_url_query(req, "start" = start)) |>
+      httr2::req_perform_parallel(max_active = max_active, progress = FALSE)
+    Map(save_page, resps, chunk)
+    wait_backoff(resps)
   }
 
   file.copy(
@@ -280,6 +300,17 @@ get_group <- function(
   writeLines(format_name, format_file)
 
   return(path)
+}
+
+#' Pause for the longest `Backoff` (seconds) Zotero asks for in `resps` (internal)
+#' @noRd
+wait_backoff <- function(resps) {
+  secs <- vapply(resps, function(resp) as.numeric(httr2::resp_header(resp, "Backoff", default = "0")), 0)
+  secs <- max(c(0, secs), na.rm = TRUE)
+  if (secs > 0) {
+    message("Zotero asks to back off - waiting ", secs, " seconds ...")
+    Sys.sleep(secs)
+  }
 }
 
 #' Name of a Zotero group (internal)
